@@ -1,0 +1,14 @@
+{
+  "name": "highlight-science-writing",
+  "version": "0.0.0",
+  "authors": [
+    "Frederic Aerts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "theaterjs": "~2.0.1"
+  },
+  "devDependencies": {
+    "bourbon": "~4.2.6"
+  }
+}
