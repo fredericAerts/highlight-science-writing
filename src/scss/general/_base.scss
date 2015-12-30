@@ -11,6 +11,10 @@ body {
   opacity: 1;
   @include transition(opacity 1s ease-in);
 
+  max-width: 100%;
+
+  overflow-x: hidden;
+
   &.hidden {
     opacity: 0;
   }

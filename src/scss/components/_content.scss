@@ -28,8 +28,8 @@
   &:after {
     position: absolute;
     top: 0;
-    left: 0;
-    @include transition(left 2s cubic-bezier(1,0,.82,-0.02));
+    right: 0;
+    @include transition(width 2s cubic-bezier(1,0,.82,-0.02));
 
     display: block;
     width: 100%;
@@ -43,7 +43,7 @@
   &.highlighted {
     
     &:after {
-      left: 105%;
+      width: 0;
     }
   }
 }
