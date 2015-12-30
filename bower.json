@@ -5,9 +5,7 @@
     "Frederic Aerts"
   ],
   "license": "MIT",
-  "dependencies": {
-    "theaterjs": "~2.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "bourbon": "~4.2.6"
   }

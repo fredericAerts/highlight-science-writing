@@ -1,5 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-	font-size: rem(100);
+  font-family: 'Quicksand', sans-serif;
 	background: $white;
-	height: 2000px;
+  opacity: 1;
+  @include transition(opacity 1s ease-in);
+
+  &.hidden {
+    opacity: 0;
+  }
 }
