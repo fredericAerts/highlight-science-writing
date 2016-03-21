@@ -2,13 +2,10 @@
 var hsr = hsr || {};
 
 hsr.app = ((window, undefined) => {
-    
+
     // On Dom ready
     let init = () => {
-        setTimeout(function() {
-            document.querySelector('body').classList.remove('hidden');
-            document.querySelector('.content__logo').classList.add('highlighted');
-        }, 300);
+
     };
 
 

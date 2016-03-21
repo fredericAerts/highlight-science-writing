@@ -1,0 +1,72 @@
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+
+    width: 850px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.hero__title {
+    position: relative;
+
+    padding: 30px 0;
+
+    font-family: $secondaryFont;
+    font-size: 80px;
+    line-height: 85px;
+    font-weight: 800;
+    text-align: left;
+
+    &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: block;
+        width: 20%;
+        height: 2px;
+
+        background: $black;
+
+        content: "";
+    }
+}
+
+.hero__intro {
+    margin-left: 25%;
+    margin-bottom: 45px;
+
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.hero__buttons {
+    margin-left: 25%;
+
+    text-align: left;
+
+    & button {
+        margin-right: 20px;
+        padding: 0 20px;
+        border: 1px solid $black;
+        border-radius: 18px;
+
+        color: $black;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 35px;
+        text-transform: uppercase;
+
+        outline: none;
+
+        &:hover {
+            // color: $white;
+            // background: $white;
+        }
+    }
+}

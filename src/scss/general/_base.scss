@@ -6,16 +6,30 @@ html {
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-	background: $white;
-  opacity: 1;
-  @include transition(opacity 1s ease-in);
-
   max-width: 100%;
 
-  overflow-x: hidden;
+  font-size: 16px;
+  color: $black;
+  font-family: $primaryFont;
+  font-weight: 400;
 
-  &.hidden {
-    opacity: 0;
-  }
+  background: $white;
+
+  overflow: hidden;
+}
+
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+button {
+  background: none;
+
+  cursor: pointer;
+  outline: none;
+  @include user-select(none);
 }

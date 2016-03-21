@@ -1,0 +1,13 @@
+.bg-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 200%;
+    height: 500px;
+
+    @include transform(rotate(-45deg) translateY(-70%));
+
+    background: #EDF816;
+}
