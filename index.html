@@ -13,22 +13,29 @@
 
   <link href='https://fonts.googleapis.com/css?family=Vollkorn:700italic,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300italic,300' rel='stylesheet' type='text/css'>
-  <!-- <link href='https://fonts.googleapis.com/css?family=Raleway:600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="web/styles/style.min.css">
 </head>
 <body>
   <header class="header">
-    <img class="header__logo" src="/web/img/logo_SQUARE.jpg">
+    <img class="header__logo js-header__logo" src="/web/img/logo_SQUARE.jpg">
+    <div class="header__mobile-menu js-header__mobile-menu">
+      <span>Menu</span>
+      <span class="icon icon--menu fa fa-bars"></span>
+      <span class="icon icon--close fa fa-close"></span>
+    </div>
     <div class="header__nav">
-      <a class="header__nav__link" href="#">About us</a>
-      <a class="header__nav__link" href="#">Our services</a>
-      <a class="header__nav__link" href="#">What clients say</a>
-      <a class="header__nav__link" href="#">Blog</a>
-      <a class="header__nav__link" href="#">Contact</a>
+      <div class="header__nav__links-wrapper">
+        <button class="header__nav__link js-header__nav__link" data-target-index="0">About us</button>
+        <button class="header__nav__link js-header__nav__link" data-target-index="1">Our services</button>
+        <button class="header__nav__link js-header__nav__link" data-target-index="2">What clients say</button>
+        <button class="header__nav__link js-header__nav__link" data-target-index="3">Blog</button>
+        <button class="header__nav__link js-header__nav__link" data-target-index="4">Contact</button>
+      </div>
     </div>
   </header>
-  <div class="bg-marker"></div>
+  <div class="bg-marker js-bg-marker landing-page"></div>
   <div class="hero">
     <h1 class="hero__title">
       Communicating<br>
@@ -36,9 +43,9 @@
     <p class="hero__intro">
       At Highlight <strong>we are committed</strong> to give your research the platform it deserves, by helping you overcome potential hurdles in the preparation of your scientific documents.
     </p>
-    <div class="hero__buttons">
-      <button>Learn more</button>
-      <button>Contact us</button>
+    <div class="hero__buttons js-hero__buttons">
+      <button data-target-index="0">Learn more</button>
+      <button data-target-index="4">Contact us</button>
     </div>
   </div>
     <span>
@@ -46,21 +53,30 @@
     </span>
   </div>
 
-  <!-- <a href="mailto:info@highlight-science-writing.com" target="_top">
-    <i class="fa fa-envelope contact__icon"></i>
-  </a>
-  <a href="skype:liesbeth.highlight?chat">
-    <i class="fa fa-skype contact__icon"></i>
-  </a>
-  <a href="https://twitter.com/highlight_sw" target="_blank">
-    <i class="fa fa-twitter-square contact__icon"></i>
-  </a>
-  <a href="https://www.facebook.com/highlightsciencewriting/" target="_blank">
-    <i class="fa fa-facebook-square contact__icon"></i>
-  </a>
-  <a href="https://www.linkedin.com/company/10385074/" target="_blank">
-    <i class="fa fa-linkedin-square contact__icon"></i>
-  </a> -->
+  <!-- about us -->
+  <div class="page js-about-us">
+    about us page
+  </div><!-- ./about us -->
+
+  <!-- our services -->
+  <div class="page js-our-services">
+    our services page
+  </div><!-- ./our services -->
+
+  <!-- what clients say -->
+  <div class="page js-what-clients-say">
+    what clients say page
+  </div><!-- ./what clients say -->
+
+  <!-- contact -->
+  <div class="page js-blog">
+    blog page
+  </div><!-- ./contact -->
+
+  <!-- contact -->
+  <div class="page js-contact">
+    contact page
+  </div><!-- ./contact -->
 
 	<script type="text/javascript" src="web/js/script.min.js"></script>
 </body>

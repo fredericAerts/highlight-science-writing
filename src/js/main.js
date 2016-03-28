@@ -1,11 +1,11 @@
 'use strict';
-var hsr = hsr || {};
+let hsr = hsr || {};
 
 hsr.app = ((window, undefined) => {
 
     // On Dom ready
     let init = () => {
-
+        hsr.nav.init();
     };
 
 

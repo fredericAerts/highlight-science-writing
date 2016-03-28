@@ -1,72 +1,112 @@
 .hero {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    @include transform(translateX(-50%) translateY(-50%));
+    @include transform(translateX(-50%) translateY(-100%));
 
-    width: 850px;
-    margin: auto;
+    width: 100%;
+    padding: 15px;
 
     text-align: center;
+
+    opacity: 0;
+
+    @include transition(all .3s ease .6s, top .3s ease .6s, opacity .2s ease .6s);
+
+    @media (min-width: $min-width-sm) {
+        width: 90%;
+        max-width: 880px;
+        margin: auto;
+    }
+
+    .landing-page + & {
+        top: 45%;
+        @include transform(translateX(-50%) translateY(-50%));
+
+        opacity: 1;
+
+        @media (min-width: $min-width-md) {
+            top: 50%;
+        }
+    }
 }
 
 .hero__title {
     position: relative;
 
-    padding: 30px 0;
+    padding: 15px 0;
 
     font-family: $secondaryFont;
-    font-size: 80px;
-    line-height: 85px;
-    font-weight: 800;
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 700;
     text-align: left;
+
+    @media (min-width: $min-width-sm) {
+        padding: 30px 0;
+
+        font-size: 80px;
+        line-height: 85px;
+    }
 
     &:after {
         position: absolute;
         left: 0;
         bottom: 0;
 
-        display: block;
+        display: none;
         width: 20%;
         height: 2px;
 
         background: $black;
 
         content: "";
+
+        @media (min-width: $min-width-sm) {
+            display: block;
+        }
     }
 }
 
 .hero__intro {
-    margin-left: 25%;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 
-    font-size: 20px;
-    line-height: 28px;
+    line-height: 24px;
     text-align: left;
+
+    @media (min-width: $min-width-sm) {
+        margin-bottom: 45px;
+        margin-left: 25%;
+
+        font-size: 20px;
+        line-height: 28px;
+    }
 }
 
 .hero__buttons {
-    margin-left: 25%;
-
     text-align: left;
 
+    @media (min-width: $min-width-sm) {
+        margin-left: 25%;
+    }
+
     & button {
-        margin-right: 20px;
-        padding: 0 20px;
+        margin-right: 10px;
+        padding: 0 15px;
         border: 1px solid $black;
         border-radius: 18px;
 
         color: $black;
-        font-size: 14px;
+        font-size: 10px;
         font-weight: 700;
-        line-height: 35px;
+        line-height: 30px;
         text-transform: uppercase;
 
-        outline: none;
+        @media (min-width: $min-width-sm) {
+            margin-right: 20px;
+            padding: 0 20px;
 
-        &:hover {
-            // color: $white;
-            // background: $white;
+            font-size: 14px;
         }
     }
 }

@@ -1,35 +1,41 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 body {
-  max-width: 100%;
+    max-width: 100%;
 
-  font-size: 16px;
-  color: $black;
-  font-family: $primaryFont;
-  font-weight: 400;
+    font-size: 14px;
+    color: $black;
+    font-family: $primaryFont;
+    font-weight: 400;
 
-  background: $white;
+    background: $white;
 
-  overflow: hidden;
+    overflow: hidden;
+
+    @media (min-width: $min-width-sm) {
+        font-size: 16px;
+    }
 }
 
 i {
-  font-style: italic;
+    font-style: italic;
 }
 
 strong {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 button {
-  background: none;
+    border: none;
 
-  cursor: pointer;
-  outline: none;
-  @include user-select(none);
+    background: none;
+
+    cursor: pointer;
+    outline: none;
+    @include user-select(none);
 }

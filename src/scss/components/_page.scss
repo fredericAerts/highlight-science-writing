@@ -1,0 +1,34 @@
+.page {
+    position: relative;
+
+    display: none;
+
+    opacity: 0;
+
+    @include transition(all .3s ease);
+
+    &.active {
+        display: block;
+
+        &--from-bottom {
+            top: 200px;
+        }
+
+        &--from-left {
+            @include transform(translateX(-100%) translateZ(0));
+        }
+
+        &--from-right {
+            @include transform(translateX(100%) translateZ(0));
+        }
+    }
+
+
+    &.positioned {
+        top: 0;
+
+        opacity: 1;
+
+        @include transform(translateX(0) translateZ(0));
+    }
+}

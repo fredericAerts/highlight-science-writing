@@ -3,6 +3,22 @@
 $white: #ffffff;
 $black: #4D4E50;
 
+$accent-color: #EDF816;
+
 $primaryFont: 'Open Sans', sans-serif;
 // $secondaryFont: 'Raleway', sans-serif;
 $secondaryFont: 'Vollkorn', serif;
+
+
+
+/*  Break Points
+    =========================== */
+$min-width-sm: 768px;
+$min-width-md: 992px;
+$min-width-lg: 1200px;
+
+/*  COMPONENTS
+    =========================== */
+
+/*  Header  */
+$nav-drawer-width: 200px;
