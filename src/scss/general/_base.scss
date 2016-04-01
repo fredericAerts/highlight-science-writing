@@ -9,17 +9,51 @@ body {
     max-width: 100%;
 
     font-size: 14px;
+    line-height: 22px;
     color: $black;
     font-family: $primaryFont;
     font-weight: 400;
 
     background: $white;
 
-    overflow: hidden;
-
     @media (min-width: $min-width-sm) {
         font-size: 16px;
+        line-height: 24px;
     }
+
+    &.on-landing-page {
+        overflow: hidden;
+    }
+}
+
+h1 {
+    margin-bottom: 30px;
+
+    font-size: 50px;
+    line-height: 54px;
+    font-family: $secondaryFont;
+    font-weight: 700;
+}
+
+h2 {
+    margin-bottom: 15px;
+
+    font-size: 22px;
+    line-height: 28px;
+    font-family: $secondaryFont;
+    font-weight: 700;
+
+    @media (min-width: $min-width-sm) {
+        max-width: 75%;
+    }
+
+    p + & {
+        margin-top: 35px;
+    }
+}
+
+p {
+    margin-bottom: 15px;
 }
 
 i {

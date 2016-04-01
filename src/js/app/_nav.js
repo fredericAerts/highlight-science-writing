@@ -19,7 +19,13 @@ hsr.nav = ((window, undefined) => {
     ];
     let activePageIndex = -1; // landing page
 
+    // Cached DOM variables
+    let bodyElement = document.querySelector('body');
+    let headerButtonWrapperElement = document.querySelector('.js-nav-link-wrapper');
+    let headerButtonElementsArray = [].slice.call(document.querySelectorAll('.js-header__nav__link'));
+
     init = () => {
+        bodyElement.classList.add('on-landing-page');
         addMobileMenuEvenListeners();
         addHeaderLogoEventListener();
         addPageNavEventListeners();
@@ -39,11 +45,34 @@ hsr.nav = ((window, undefined) => {
     addHeaderLogoEventListener = () => {
         let headerLogoElement = document.querySelector('.js-header__logo');
         headerLogoElement.addEventListener('click', () => { // back to landing page
-            mobileMenuElement.classList.remove('open');
-            if (activePageIndex === -1) {return;} // already on landing page
+            initPage(-1);
+        });
+    }
 
-            let currentPageElement = pageElements[activePageIndex];
+    addPageNavEventListeners = () => {
+        let heroButtonElementsArray = [].slice.call(document.querySelectorAll('.js-hero__buttons button'));
+        let navButtonElementsArray = headerButtonElementsArray.concat(heroButtonElementsArray);
+        navButtonElementsArray.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                let targetIndex = parseInt(event.target.getAttribute('data-target-index'), 10);
+                initPage(targetIndex);
+            });
+        });
+    }
 
+    initPage = (targetPageIndex) => { // navigate to landing page is handled by function addHeaderLogoEventListener
+        mobileMenuElement.classList.remove('open');
+
+        if (targetPageIndex === activePageIndex) {return;}
+
+        let currentPageElement = pageElements[activePageIndex];
+        let targetPageElement = pageElements[targetPageIndex];
+
+        removeActiveClassFromNavlinks();
+
+        if (targetPageIndex < 0) { // navigate back to landing page
+            bodyElement.classList.add('on-landing-page');
+            headerButtonWrapperElement.classList.remove('page-from-left', 'page-from-right');
             currentPageElement.classList.add('active--from-bottom');
             currentPageElement.classList.remove('positioned', 'active--from-right', 'active--from-left');
             setTimeout(function() {
@@ -51,39 +80,23 @@ hsr.nav = ((window, undefined) => {
                 bgMarkerElement.classList.add('landing-page');
             }, 100);
 
-            mobileMenuElement.classList.remove('open');
-            activePageIndex = -1;
-        });
-    }
+        }
+        else if (activePageIndex < 0) { // current page is landing page => new page moves in from bottom
+            removeActiveClassFromNavlinks();
 
-    addPageNavEventListeners = () => {
-        let headerButtonElementsArray = [].slice.call(document.querySelectorAll('.js-header__nav__link'));
-        let heroButtonElementsArray = [].slice.call(document.querySelectorAll('.js-hero__buttons button'));
-        let navButtonElementsArray = headerButtonElementsArray.concat(heroButtonElementsArray);
-        navButtonElementsArray.forEach((button) => {
-            button.addEventListener('click', (event) => {
-                let targetIndex = parseInt(event.target.getAttribute('data-target-index'), 10);
-                initPage(targetIndex);
-                mobileMenuElement.classList.remove('open');
-                event.preventDefault();
-            });
-        });
-    }
-
-    initPage = (pageIndex) => {
-        if (pageIndex === activePageIndex) return; // page already active
-
-        let currentPageElement = pageElements[activePageIndex];
-        let targetPageElement = pageElements[pageIndex];
-
-        if (activePageIndex < 0) { // current page is landing page => new page moves in from bottom
             targetPageElement.classList.add('active', 'active--from-bottom');
             bgMarkerElement.classList.remove('landing-page');
             setTimeout(function() {
                 targetPageElement.classList.add('positioned');
+                addActiveClassToNavlink();
+                bodyElement.classList.remove('on-landing-page');
             }, 700);
         }
-        else if (pageIndex < activePageIndex) { // new page moves in from left
+        else if (targetPageIndex < activePageIndex) { // new page moves in from left
+            headerButtonWrapperElement.classList.remove('page-from-left');
+            headerButtonWrapperElement.classList.add('page-from-right');
+            removeActiveClassFromNavlinks();
+
             currentPageElement.classList.add('active--from-right');
             currentPageElement.classList.remove('positioned', 'active--from-bottom', 'active--from-left');
             setTimeout(function() {
@@ -91,11 +104,16 @@ hsr.nav = ((window, undefined) => {
                 targetPageElement.classList.add('active', 'active--from-left');
                 setTimeout(function() {
                     targetPageElement.classList.add('positioned');
+                    addActiveClassToNavlink();
                 }, 100);
             }, 300);
 
         }
         else { // new page moves in from right
+            headerButtonWrapperElement.classList.remove('page-from-right');
+            headerButtonWrapperElement.classList.add('page-from-left');
+            removeActiveClassFromNavlinks();
+
             currentPageElement.classList.add('active--from-left');
             currentPageElement.classList.remove('positioned', 'active--from-bottom', 'active--from-right');
             setTimeout(function() {
@@ -103,10 +121,24 @@ hsr.nav = ((window, undefined) => {
                 targetPageElement.classList.add('active', 'active--from-right');
                 setTimeout(function() {
                     targetPageElement.classList.add('positioned');
+                    addActiveClassToNavlink();
                 }, 100);
             }, 300);
         }
-        activePageIndex = pageIndex;
+
+        activePageIndex = targetPageIndex;
+
+        function removeActiveClassFromNavlinks() {
+            headerButtonElementsArray.forEach(function(button) {
+                button.classList.remove('active');
+            });
+        }
+
+        function addActiveClassToNavlink() {
+            headerButtonElementsArray.filter(function(button) {
+                return parseInt(button.getAttribute('data-target-index'), 10) === targetPageIndex;
+            })[0].classList.add('active');
+        }
     }
 
     return {

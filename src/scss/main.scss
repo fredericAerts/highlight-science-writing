@@ -12,9 +12,13 @@
 	=============================== */
 @import 'general/base';
 
+/*  Pages
+  =============================== */
+@import 'pages/page',
+        'pages/page--about';
+
 /*  Components
   =============================== */
 @import 'components/bg-marker',
         'components/header',
-        'components/hero',
-        'components/page';
+        'components/hero';

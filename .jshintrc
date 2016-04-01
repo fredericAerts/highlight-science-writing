@@ -84,7 +84,6 @@
 
     // Custom Globals
     "globals"       : {
-        "$": false,
-        "jQuery": false
+        "hsr": false
     }
 }

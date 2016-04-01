@@ -2,10 +2,18 @@
     position: relative;
 
     display: none;
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 15px;
 
     opacity: 0;
 
-    @include transition(all .3s ease);
+    @include transition(all .2s ease, opacity .1s ease);
+
+    @media (min-width: $min-width-sm) {
+        margin: 60px auto;
+    }
 
     &.active {
         display: block;
@@ -15,11 +23,11 @@
         }
 
         &--from-left {
-            @include transform(translateX(-100%) translateZ(0));
+            @include transform(translateX(-20px) translateZ(0));
         }
 
         &--from-right {
-            @include transform(translateX(100%) translateZ(0));
+            @include transform(translateX(20px) translateZ(0));
         }
     }
 

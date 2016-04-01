@@ -1,19 +1,31 @@
 .header {
-    padding: 15px;
+    position: relative;
+
+    height: $header-height;
 }
 
 .header__logo {
-    width: 40px;
-    height: 29.1094px;
+    display: inline-block;
+    height: 100%;
+    width: $header-logo-width + 30px;
+    padding: 0 12px;
 
     cursor: pointer;
+
+    & img {
+        position: relative;
+        top: 12px;
+
+        width: $header-logo-width;
+        height: 36.392px;
+    }
 }
 
 .header__mobile-menu {
     float: right;
 
     display: inline-block;
-    padding-left: 15px;
+    padding: 15px;
 
     line-height: 28px;
 
@@ -88,6 +100,7 @@
         @include transform(none);
 
         width: auto;
+
         background: transparent;
 
         text-align: left;
@@ -100,6 +113,7 @@
     @include transform(translateY(-50%));
 
     width: 100%;
+    padding: 0 15px;
 
     @media (min-width: $min-width-sm) {
         position: static;
@@ -111,6 +125,8 @@
 }
 
 .header__nav__link {
+    position: relative;
+
     display: block;
     width: 100%;
 
@@ -122,8 +138,68 @@
     @media (min-width: $min-width-sm) {
         display: inline-block;
         width: auto;
-        margin-right: 15px;
+        height: $header-height;
+        padding: 3px 8px 0;
+    }
 
-        line-height: 35px;
+    &:after {
+
+        @media (min-width: $min-width-sm) {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+
+            display: block;
+            width: 0;
+            height: 3px;
+
+            background: $black;
+            background: rgba($black, .8);
+
+            content: "";
+            @include transition(width .3s ease);
+        }
+
+        .page-from-left & {
+
+            @media (min-width: $min-width-sm) {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .page-from-right & {
+
+            @media (min-width: $min-width-sm) {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    &.active {
+
+        &:after {
+
+            @media (min-width: $min-width-sm) {
+                width: 100%;
+            }
+
+            .page-from-left & {
+
+                @media (min-width: $min-width-sm) {
+                    left: 0;
+                    right: auto;
+                }
+            }
+
+            .page-from-right & {
+
+                @media (min-width: $min-width-sm) {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
     }
 }
