@@ -26,6 +26,7 @@ hsr.nav = ((window, undefined) => {
 
     init = () => {
         bodyElement.classList.add('on-landing-page');
+        bodyElement.style.height = window.innerHeight + 'px';
         addMobileMenuEvenListeners();
         addHeaderLogoEventListener();
         addPageNavEventListeners();
@@ -72,6 +73,7 @@ hsr.nav = ((window, undefined) => {
 
         if (targetPageIndex < 0) { // navigate back to landing page
             bodyElement.classList.add('on-landing-page');
+            bodyElement.style.height = window.innerHeight + 'px';
             headerButtonWrapperElement.classList.remove('page-from-left', 'page-from-right');
             currentPageElement.classList.add('active--from-bottom');
             currentPageElement.classList.remove('positioned', 'active--from-right', 'active--from-left');
@@ -90,6 +92,7 @@ hsr.nav = ((window, undefined) => {
                 targetPageElement.classList.add('positioned');
                 addActiveClassToNavlink();
                 bodyElement.classList.remove('on-landing-page');
+                bodyElement.style.height = 'auto';
             }, 700);
         }
         else if (targetPageIndex < activePageIndex) { // new page moves in from left

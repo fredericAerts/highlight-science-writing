@@ -22,13 +22,14 @@ var paths = {
         'src/scss/**/*.scss'
       ],
       js: [
+        'node_modules/dropcap.js/dropcap.js',
         'src/js/vendor/*.js',
         'src/js/app/*.js',
         'src/js/*.js'
-      ], 
+      ],
       img: [
         'src/img/**/*'
-      ]  
+      ]
     },
     vendor: {
       js: 'src/js/vendor/'
@@ -38,17 +39,17 @@ var paths = {
       'src/js/app/*.js',
       'src/js/*.js'
       ]
-    }  
+    }
   },
   livereload: [
-    'web/styles/*.css', 
-    'web/js/*.js', 
-    'web/img/*', 
+    'web/styles/*.css',
+    'web/js/*.js',
+    'web/img/*',
     '*.html'
   ],
   web: {
     images: 'web/img'
-  } 
+  }
 }
 
 /* Errorhandling
@@ -102,10 +103,10 @@ gulp.task('styles', function() {
     .pipe(plugins.plumber({
         handleError: errorHandler
     }))
-    .pipe(plugins.sass({ 
+    .pipe(plugins.sass({
       debugInfo   : true,
       lineNumbers : true,
-      style: 'expanded', 
+      style: 'expanded',
       sourceComments: 'normal',
       onError: function(err) {
          return plugins.notify().write(err);
@@ -119,7 +120,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('web/styles'));
 });
 
-// scripts 
+// scripts
 gulp.task('scripts', function() {
   return gulp.src( paths.src.all.js )
     .pipe(plugins.plumber({
@@ -129,7 +130,7 @@ gulp.task('scripts', function() {
     .pipe(plugins.babel())
     .pipe(gulp.dest('web/.temp/js'))
     .pipe(plugins.rename({suffix: '.min'}))
-    // .pipe(plugins.uglify())
+    .pipe(plugins.uglify())
     .pipe(gulp.dest('web/js'));
 });
 
@@ -149,9 +150,9 @@ gulp.task('jshint', function() {
 gulp.task('images', function() {
   return gulp.src( paths.src.all.img )
     .pipe(plugins.changed(paths.web.images))
-    .pipe(plugins.imagemin({ 
-      optimizationLevel: 5, 
-      progressive: true, 
+    .pipe(plugins.imagemin({
+      optimizationLevel: 5,
+      progressive: true,
       interlaced: true,
       svgoPlugins: [{removeViewBox: false}]
     }))
@@ -169,7 +170,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.all.scss, ['styles']);
   // Watch .js files
   gulp.watch(paths.src.all.js, ['scripts']);
-  // jsHint 
+  // jsHint
   gulp.watch(paths.src.custom.js, ['jshint']);
   // Watch image files
   gulp.watch(paths.src.all.img, ['images']);

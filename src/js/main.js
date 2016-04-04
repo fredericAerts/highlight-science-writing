@@ -6,6 +6,7 @@ hsr.app = ((window, undefined) => {
     // On Dom ready
     let init = () => {
         hsr.nav.init();
+        hsr.dropcap.init();
     };
 
 
