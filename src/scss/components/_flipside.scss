@@ -1,0 +1,256 @@
+$transition-duration: 0.8s;
+$transition-easing: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$bounce-easing: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$closed-width: 33%;
+$closed-height: 80px;
+$opened-width-sm: 300px;
+$opened-width: 500px;
+$opened-height-sm: 520px;
+$opened-height: 340px;
+
+.js-our-services {
+
+    &.tile-open {
+        position: relative;
+
+        @include transform(translateZ(0) scale(.95));
+        transition: transform .6s $transition-easing;
+
+        &:before { // overlay
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            content: "";
+        }
+
+        & .blur-when-tile-opened {
+            @include filter(blur(2px));
+        }
+    }
+}
+
+.flipside-container {
+    margin-bottom: 35px;
+
+    font-size: 0;
+    line-height: 0;
+}
+
+.flipside-container__row {
+    margin-bottom: 5px;
+
+    & .flipside-placeholder {
+        border-right: 5px solid $white;
+
+        & .flipside.is-open {
+            @include transform(translateX(-33%) translateY(-30%) translateZ(0) rotateY(-180deg));
+
+            // @media (min-width: 540px) {
+            //     @include transform(translateX(-33%) translateY(-30%) rotateY(-180deg));
+            // }
+
+            @media (min-width: $min-width-sm) {
+                @include transform(translateX(-25%) translateY(-30%) translateZ(0) rotateY(-180deg));
+            }
+        }
+
+        &:first-child {
+
+            & .flipside.is-open {
+                @include transform(translateX(0) translateY(-30%) translateZ(0) rotateY(-180deg));
+
+                @media (min-width: 540px) {
+                    @include transform(translateX(7%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                }
+
+                @media (min-width: $min-width-sm) {
+                    @include transform(translateX(25%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                }
+            }
+        }
+
+        &:last-child {
+            border: 0;
+
+            & .flipside.is-open {
+                @include transform(translateX(-65%) translateY(-30%) translateZ(0) rotateY(-180deg));
+
+                @media (min-width: 540px) {
+                    @include transform(translateX(-70%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                }
+
+                @media (min-width: $min-width-sm) {
+                    @include transform(translateX(-75%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                }
+            }
+        }
+    }
+}
+
+.flipside-placeholder {
+    position: relative;
+
+    display: inline-block;
+    width: $closed-width;
+    height: $closed-height;
+
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.flipside {
+    position: absolute;
+    @include transform-origin(50% 50%);
+    @include transform-style(preserve-3d);
+
+    display: block;
+    width: 100%;
+    height: $closed-height;
+
+    transition: transform $transition-duration $transition-easing,
+                width $transition-duration $transition-easing,
+                height $transition-duration $transition-easing;
+
+    &.blurred {
+        @include filter(blur(2px));
+    }
+}
+
+.flipside__front {
+    position: absolute;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    color: $white;
+    text-align: center;
+
+    background-color: $secondary-accent-color;
+
+    cursor: pointer;
+    backface-visibility: hidden;
+    -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+    @include transition(background 0.15s ease, line-height $transition-duration $transition-easing);
+
+    &:hover {
+        background-color: lighten($secondary-accent-color, 10%);
+    }
+
+    & > span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translateX(-50%) translateY(-50%) translateZ(0));
+
+        display: block;
+        width: 100%;
+        padding: 0 5px;
+
+        font-size: 11px;
+        line-height: 14px;
+
+        @media (min-width: $min-width-sm) {
+            padding: 0 15px;
+
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
+.flipside__back {
+    position: absolute;
+    @include transform(translateZ(-2px) translateZ(0) rotateY(180deg));
+
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background-color: $grey-xlight;
+
+    color: #222;
+
+    overflow: hidden;
+    @include transition(box-shadow $transition-duration ease);
+}
+
+.flipside__back__content {
+    width: $opened-width-sm - 50px;
+
+    @media (min-width: 540px) {
+        width: $opened-width - 50px;
+    }
+}
+
+.flipside__back__content__title {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+.flipside__back__content__text {
+}
+
+.flipside__back__content__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid $grey-light;
+
+    background: $grey-xlight;
+
+    opacity: 0;
+
+    @include transition(opacity .2s ease .2s);
+}
+
+.flipside__back__content__footer__close {
+    float: right;
+
+    padding: 12px 20px;
+
+    color: #fff;
+
+    background: $tertiary-accent-color;
+
+    &:hover {
+        background: lighten($tertiary-accent-color, 10%);
+    }
+}
+
+.flipside.is-open {
+    z-index: 9;
+
+    width: $opened-width-sm;
+    height: $opened-height-sm;
+
+    @media (min-width: 540px) {
+        width: $opened-width;
+        height: $opened-height;
+    }
+
+    .flipside__front {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    & .flipside__back__content__footer {
+        opacity: 1;
+    }
+
+    .flipside__back {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+}

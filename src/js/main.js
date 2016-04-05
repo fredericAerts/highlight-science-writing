@@ -7,6 +7,8 @@ hsr.app = ((window, undefined) => {
     let init = () => {
         hsr.nav.init();
         hsr.dropcap.init();
+        hsr.flipside.init();
+        attachWindowEventHandlers();
     };
 
 
@@ -14,6 +16,12 @@ hsr.app = ((window, undefined) => {
     // initOnload = () => {
     //     appScroll();
     // };
+
+    function attachWindowEventHandlers() {
+        window.addEventListener('click', function clickEventHandler(event) {
+            hsr.flipside.closeTiles();
+        });
+    }
 
     // On Scroll
     // appScroll = () => {
