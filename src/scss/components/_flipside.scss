@@ -17,7 +17,7 @@ $opened-height: 340px;
         transition: transform .6s $transition-easing;
 
         &:before { // overlay
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 1;
@@ -49,28 +49,30 @@ $opened-height: 340px;
         border-right: 5px solid $white;
 
         & .flipside.is-open {
-            @include transform(translateX(-33%) translateY(-30%) translateZ(0) rotateY(-180deg));
+            top: -100%;
+            left: -100%;
+            z-index: 99;
+            @include transform(translateZ(0) rotateY(-180deg));
 
             // @media (min-width: 540px) {
             //     @include transform(translateX(-33%) translateY(-30%) rotateY(-180deg));
             // }
 
             @media (min-width: $min-width-sm) {
-                @include transform(translateX(-25%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                left: -50%;
             }
         }
 
         &:first-child {
 
             & .flipside.is-open {
-                @include transform(translateX(0) translateY(-30%) translateZ(0) rotateY(-180deg));
+                @include transform(translateZ(0) rotateY(-180deg));
 
                 @media (min-width: 540px) {
-                    @include transform(translateX(7%) translateY(-30%) translateZ(0) rotateY(-180deg));
                 }
 
                 @media (min-width: $min-width-sm) {
-                    @include transform(translateX(25%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                    left: 50%;
                 }
             }
         }
@@ -79,15 +81,25 @@ $opened-height: 340px;
             border: 0;
 
             & .flipside.is-open {
-                @include transform(translateX(-65%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                left: -200%;
+                @include transform(translateZ(0) rotateY(-180deg));
 
                 @media (min-width: 540px) {
-                    @include transform(translateX(-70%) translateY(-30%) translateZ(0) rotateY(-180deg));
                 }
 
                 @media (min-width: $min-width-sm) {
-                    @include transform(translateX(-75%) translateY(-30%) translateZ(0) rotateY(-180deg));
+                    left: auto;
+                    right: 50%;
                 }
+            }
+        }
+    }
+
+    &:last-child {
+        & .flipside-placeholder {
+
+            & .flipside.is-open {
+                top: calc(-100% - #{$closed-height});
             }
         }
     }
@@ -106,6 +118,8 @@ $opened-height: 340px;
 
 .flipside {
     position: absolute;
+    left: 0;
+    top: 0;
     @include transform-origin(50% 50%);
     @include transform-style(preserve-3d);
 
@@ -113,8 +127,10 @@ $opened-height: 340px;
     width: 100%;
     height: $closed-height;
 
-    transition: transform $transition-duration $transition-easing,
+    transition: transform $transition-duration $bounce-easing,
                 width $transition-duration $transition-easing,
+                left $transition-duration $transition-easing,
+                top $transition-duration $transition-easing,
                 height $transition-duration $transition-easing;
 
     &.blurred {
@@ -124,8 +140,10 @@ $opened-height: 340px;
 
 .flipside__front {
     position: absolute;
+    left: 0;
+    top: 0;
 
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
 
@@ -133,6 +151,8 @@ $opened-height: 340px;
     text-align: center;
 
     background-color: $secondary-accent-color;
+
+    align-items: center;
 
     cursor: pointer;
     backface-visibility: hidden;
@@ -144,11 +164,6 @@ $opened-height: 340px;
     }
 
     & > span {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        @include transform(translateX(-50%) translateY(-50%) translateZ(0));
-
         display: block;
         width: 100%;
         padding: 0 5px;
@@ -167,7 +182,7 @@ $opened-height: 340px;
 
 .flipside__back {
     position: absolute;
-    @include transform(translateZ(-2px) translateZ(0) rotateY(180deg));
+    @include transform(translateZ(-2px) rotateY(180deg));
 
     width: 100%;
     height: 100%;
