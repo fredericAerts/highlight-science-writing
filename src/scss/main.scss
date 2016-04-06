@@ -6,7 +6,8 @@
 
 /*	Helpers
 	=============================== */
-@import	'helpers/variables';
+@import	'helpers/variables',
+        'helpers/classes';
 
 /*	General
 	=============================== */
@@ -22,5 +23,9 @@
 @import 'components/bg-marker',
         'components/header',
         'components/hero',
+        'components/nav-link',
+        'components/guarantee-list',
+        'components/quote',
         'components/dropcap',
+        'components/form',
         'components/flipside';

@@ -16,6 +16,8 @@ body {
 
     background: $white;
 
+    overflow-x: hidden;
+
     @include perspective(1000px);
 
     @media (min-width: $min-width-sm) {

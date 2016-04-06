@@ -51,8 +51,9 @@ hsr.nav = ((window, undefined) => {
     }
 
     addPageNavEventListeners = () => {
-        let heroButtonElementsArray = [].slice.call(document.querySelectorAll('.js-hero__buttons button'));
-        let navButtonElementsArray = headerButtonElementsArray.concat(heroButtonElementsArray);
+        let heroButtonElementsArray = [].slice.call(document.querySelectorAll('.js-hero__buttons button')),
+            pageNavLinks = [].slice.call(document.querySelectorAll('.js-nav-link'));
+        let navButtonElementsArray = headerButtonElementsArray.concat(heroButtonElementsArray, pageNavLinks);
         navButtonElementsArray.forEach((button) => {
             button.addEventListener('click', (event) => {
                 let targetIndex = parseInt(event.target.getAttribute('data-target-index'), 10);

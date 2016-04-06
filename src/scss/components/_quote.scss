@@ -1,0 +1,62 @@
+.quotes-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @media (min-width: $min-width-sm) {
+        margin-top: 40px;
+    }
+}
+
+.quote {
+    flex-basis: 100%;
+
+    display: inline-block;
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    @media (min-width: $min-width-sm) {
+        flex-basis: 50%;
+    }
+
+    &:nth-child(even) {
+
+        @media (min-width: $min-width-sm) {
+            padding-left: 30px;
+        }
+    }
+
+    &:nth-child(odd) {
+
+        @media (min-width: $min-width-sm) {
+            padding-right: 30px;
+        }
+    }
+
+    & p {
+        margin-bottom: 3px;
+
+        font-style: italic;
+
+    }
+
+    & footer {
+        position: relative;
+
+        padding-right: 30px;
+        padding-left: 15px;
+
+        color: $secondary-accent-color--dark;
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
+
+.quote__stars {
+    margin-bottom: 8px;
+
+    & .icon {
+        color: $secondary-accent-color--dark;
+    }
+}

@@ -17,9 +17,12 @@ hsr.flipside = ((window, undefined) => {
     addEventListeners = () => {
         flipsideTileElements.forEach(function(tile) {
             let tileFront = tile.querySelector('.flipside__front'),
-            btnClose = tile.querySelector('.js-close-flip');
+            btnClose = tile.querySelector('.js-close-flip'),
+            tileContent = tile.querySelector('.flipside__back__content');
 
             tileFront.addEventListener( 'click', function(event) {
+                let windowWidth = window.innerWidth;
+
                 let isAnotherTileOpened = flipsideTileElements.filter(function(tile) {
                     return tile.classList.contains('is-open');
                 })[0];
@@ -32,6 +35,14 @@ hsr.flipside = ((window, undefined) => {
                 });
                 tile.classList.remove('blurred');
                 tile.classList.add('is-open');
+                if (windowWidth < 768) {
+                    tile.style.width = windowWidth - 30 + 'px';
+                    tileContent.style.width = windowWidth - 80 + 'px';
+                }
+                else {
+                   tile.removeAttribute('style');
+                   tileContent.removeAttribute('style');
+                }
                 ourServicesPage.classList.add('tile-open');
                 event.stopPropagation();
             });
@@ -41,6 +52,8 @@ hsr.flipside = ((window, undefined) => {
                     tile.classList.remove('blurred');
                 });
                 tile.classList.remove('is-open');
+                tile.removeAttribute('style');
+                tileContent.removeAttribute('style');
                 ourServicesPage.classList.remove('tile-open');
                 event.stopPropagation();
             });
@@ -49,8 +62,11 @@ hsr.flipside = ((window, undefined) => {
 
     closeTiles = () => {
         flipsideTileElements.forEach(function(tile) {
+            let tileContent = tile.querySelector('.flipside__back__content');
             tile.classList.remove('blurred');
             tile.classList.remove('is-open');
+            tile.removeAttribute('style');
+            tileContent.removeAttribute('style');
             ourServicesPage.classList.remove('tile-open');
         });
     }

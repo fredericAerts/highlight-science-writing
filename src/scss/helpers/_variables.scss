@@ -5,9 +5,11 @@ $black: #4D4E50;
 
 $grey-xlight: #eee;
 $grey-light: #ddd;
+$grey: #999;
 
 $accent-color: #EDF816;
 $secondary-accent-color: #F44336;
+$secondary-accent-color--dark: #c90707;
 $tertiary-accent-color: #2196F3;
 
 $primaryFont: 'Open Sans', sans-serif;
@@ -27,3 +29,17 @@ $min-width-lg: 1200px;
 $header-height: 60px;
 $header-logo-width: 45px;
 $nav-drawer-width: 200px;
+
+/* Flipside */
+$closed-width: 33.33%;
+$closed-height: 80px;
+$opened-width: 500px; // set by js on small screens
+$opened-height-xxxs: 550px;
+$opened-height-xxs: 480px; // from 360px screen width
+$opened-height-xs: 370px; // from 520px screen width
+$opened-height: 350px; // from 768px screen width
+
+/*  Transition functions
+    =========================== */
+$transition-easing: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+$bounce-easing: cubic-bezier(0.175, 0.885, 0.320, 1.275);

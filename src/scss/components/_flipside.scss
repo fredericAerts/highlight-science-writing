@@ -1,20 +1,9 @@
-$transition-duration: 0.8s;
-$transition-easing: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$bounce-easing: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-$closed-width: 33%;
-$closed-height: 80px;
-$opened-width-sm: 300px;
-$opened-width: 500px;
-$opened-height-sm: 520px;
-$opened-height: 340px;
-
 .js-our-services {
 
     &.tile-open {
         position: relative;
-
-        @include transform(translateZ(0) scale(.95));
-        transition: transform .6s $transition-easing;
+        @include transform(translateZ(0) scale(.97));
+        @include transition(all .6s $transition-easing);
 
         &:before { // overlay
             position: fixed;
@@ -31,6 +20,7 @@ $opened-height: 340px;
 
         & .blur-when-tile-opened {
             @include filter(blur(2px));
+
         }
     }
 }
@@ -52,11 +42,7 @@ $opened-height: 340px;
             top: -100%;
             left: -100%;
             z-index: 99;
-            @include transform(translateZ(0) rotateY(-180deg));
-
-            // @media (min-width: 540px) {
-            //     @include transform(translateX(-33%) translateY(-30%) rotateY(-180deg));
-            // }
+            @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
 
             @media (min-width: $min-width-sm) {
                 left: -50%;
@@ -66,10 +52,8 @@ $opened-height: 340px;
         &:first-child {
 
             & .flipside.is-open {
-                @include transform(translateZ(0) rotateY(-180deg));
-
-                @media (min-width: 540px) {
-                }
+                left: 0;
+                @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
 
                 @media (min-width: $min-width-sm) {
                     left: 50%;
@@ -82,10 +66,7 @@ $opened-height: 340px;
 
             & .flipside.is-open {
                 left: -200%;
-                @include transform(translateZ(0) rotateY(-180deg));
-
-                @media (min-width: 540px) {
-                }
+                @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
 
                 @media (min-width: $min-width-sm) {
                     left: auto;
@@ -95,11 +76,13 @@ $opened-height: 340px;
         }
     }
 
-    &:last-child {
+    &:nth-child(2) {
+        margin-bottom: 10px;
+
         & .flipside-placeholder {
 
             & .flipside.is-open {
-                top: calc(-100% - #{$closed-height});
+                top: calc(-100% - #{$closed-height} - 5px);
             }
         }
     }
@@ -127,11 +110,11 @@ $opened-height: 340px;
     width: 100%;
     height: $closed-height;
 
-    transition: transform $transition-duration $bounce-easing,
-                width $transition-duration $transition-easing,
-                left $transition-duration $transition-easing,
-                top $transition-duration $transition-easing,
-                height $transition-duration $transition-easing;
+    transition: transform .8s $bounce-easing,
+                width .8s $transition-easing,
+                left .8s $transition-easing,
+                top .8s $transition-easing,
+                height .8s $transition-easing;
 
     &.blurred {
         @include filter(blur(2px));
@@ -157,7 +140,7 @@ $opened-height: 340px;
     cursor: pointer;
     backface-visibility: hidden;
     -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
-    @include transition(background 0.15s ease, line-height $transition-duration $transition-easing);
+    @include transition(background 0.15s ease, line-height .8s $transition-easing);
 
     &:hover {
         background-color: lighten($secondary-accent-color, 10%);
@@ -192,15 +175,11 @@ $opened-height: 340px;
     color: #222;
 
     overflow: hidden;
-    @include transition(box-shadow $transition-duration ease);
+    @include transition(box-shadow .8s ease);
 }
 
 .flipside__back__content {
-    width: $opened-width-sm - 50px;
-
-    @media (min-width: 540px) {
-        width: $opened-width - 50px;
-    }
+    width: $opened-width - 50px; // overwritten by js on small screens
 }
 
 .flipside__back__content__title {
@@ -248,11 +227,18 @@ $opened-height: 340px;
 .flipside.is-open {
     z-index: 9;
 
-    width: $opened-width-sm;
-    height: $opened-height-sm;
+    width: $opened-width; // overwritten by js on small screens
+    height: $opened-height-xxxs;
 
-    @media (min-width: 540px) {
-        width: $opened-width;
+    @media (min-width: 360px) {
+        height: $opened-height-xxs;
+    }
+
+    @media (min-width: 520px) {
+        height: $opened-height-xs;
+    }
+
+    @media (min-width: $min-width-sm) {
         height: $opened-height;
     }
 
@@ -268,4 +254,11 @@ $opened-height: 340px;
     .flipside__back {
         box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
+}
+
+.flipside-instruction {
+    color: $grey;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: 400;
 }

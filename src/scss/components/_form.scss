@@ -1,0 +1,104 @@
+.input {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    width: 350px;
+    padding-top: 28px;
+
+
+    vertical-align: top;
+
+    overflow: hidden;
+}
+
+.input__field {
+    float: right;
+    position: relative;
+    z-index: 100;
+
+    display: block;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+
+    font-size: 14px;
+    color: $white;
+    font-family: $primaryFont;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+
+    opacity: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.input__label {
+    float: right;
+    position: absolute;
+    bottom: 0;
+
+    display: inline-block;
+    width: 100%;
+    padding: 0 5px;
+
+    color: $grey;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    pointer-events: none;
+    @include user-select(none);
+
+    &:before {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        height: 56px;
+        border-top: 4px solid #9B9F9F;
+
+        background: $grey;
+
+        @include transform(translate3d(0, -3px, 0));
+        @include transition(all .4s cubic-bezier(0.7, 0, 0.3, 1));
+
+        content: '';
+    }
+}
+
+.input__label-content {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    padding: 0.5em 0;
+
+    @include transform-origin(0% 100%);
+    @include transition(all .4s cubic-bezier(0.7, 0, 0.3, 1));
+}
+
+.input__field:focus,
+.js-input-filled .input__field {
+    cursor: text;
+    opacity: 1;
+    @include transition(opacity 0s .4s);
+}
+
+.input__field:focus + .input__label::before,
+.js-input-filled .input__label::before {
+    @include transition-delay(.05s);
+    @include transform(translate3d(0, -42px, 0));
+}
+
+.input__field:focus + .input__label .input__label-content,
+.js-input-filled .input__label-content {
+    color: $black;
+    @include transform(translate3d(0, -42px, 0) scale3d(0.81, 0.81, 1));
+}
