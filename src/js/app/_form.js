@@ -1,6 +1,6 @@
 hsr = hsr || {};
 
-hsr.forms = ((window, undefined) => {
+hsr.form = ((window, undefined) => {
 
     let init, addEventListeners;
 

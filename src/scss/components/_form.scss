@@ -1,11 +1,28 @@
+.inputs-wrapper {
+    font-size: 0;
+
+    &.col-2 {
+
+        & .input {
+            width: 47%;
+
+            &:first-child {
+                margin-right: 3%;
+            }
+
+            &:last-child {
+                margin-left: 3%;
+            }
+        }
+    }
+}
+
 .input {
     position: relative;
     z-index: 1;
 
     display: inline-block;
-    width: 350px;
     padding-top: 28px;
-
 
     vertical-align: top;
 
