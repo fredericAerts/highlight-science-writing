@@ -1,8 +1,8 @@
-.js-our-services {
+.page--what-we-do {
 
     &.tile-open {
         position: relative;
-        @include transform(translateZ(0) scale(.97));
+        @include transform(translateZ(0));
         @include transition(all .6s $transition-easing);
 
         &:before { // overlay
@@ -42,7 +42,7 @@
             top: -100%;
             left: -100%;
             z-index: 99;
-            @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
+            @include transform(translateZ(500px) rotateY(-180deg));
 
             @media (min-width: $min-width-sm) {
                 left: -50%;
@@ -53,7 +53,7 @@
 
             & .flipside.is-open {
                 left: 0;
-                @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
+                @include transform(translateZ(500px) rotateY(-180deg));
 
                 @media (min-width: $min-width-sm) {
                     left: 50%;
@@ -66,7 +66,7 @@
 
             & .flipside.is-open {
                 left: -200%;
-                @include transform(translateZ(0) rotateY(-180deg) scale(1.03));
+                @include transform(translateZ(500px) rotateY(-180deg));
 
                 @media (min-width: $min-width-sm) {
                     left: auto;
@@ -186,6 +186,7 @@
     margin: 0 0 10px;
 
     font-size: 18px;
+    font-weight: 700;
     line-height: 22px;
     text-transform: uppercase;
 }
@@ -260,5 +261,4 @@
     color: $grey;
     font-size: 11px;
     line-height: 15px;
-    font-weight: 400;
 }

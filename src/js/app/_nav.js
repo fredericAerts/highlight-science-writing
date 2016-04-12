@@ -11,8 +11,8 @@ hsr.nav = ((window, undefined) => {
     let bgMarkerElement = document.querySelector('.js-bg-marker');
     let mobileMenuElement = document.querySelector('.js-header__mobile-menu');
     let pageElements = [
+        document.querySelector('.js-what-we-do'),
         document.querySelector('.js-about-us'),
-        document.querySelector('.js-our-services'),
         document.querySelector('.js-what-clients-say'),
         document.querySelector('.js-blog'),
         document.querySelector('.js-contact')

@@ -7,7 +7,7 @@ hsr.flipside = ((window, undefined) => {
     let addEventListeners;
 
     // DOM variable
-    let ourServicesPage = document.querySelector('.js-our-services');
+    let whatWeDoPage = document.querySelector('.js-what-we-do');
     let flipsideTileElements = [].slice.call(document.querySelectorAll('.flipside'));
 
     init = () => {
@@ -43,7 +43,7 @@ hsr.flipside = ((window, undefined) => {
                    tile.removeAttribute('style');
                    tileContent.removeAttribute('style');
                 }
-                ourServicesPage.classList.add('tile-open');
+                whatWeDoPage.classList.add('tile-open');
                 event.stopPropagation();
             });
 
@@ -54,7 +54,7 @@ hsr.flipside = ((window, undefined) => {
                 tile.classList.remove('is-open');
                 tile.removeAttribute('style');
                 tileContent.removeAttribute('style');
-                ourServicesPage.classList.remove('tile-open');
+                whatWeDoPage.classList.remove('tile-open');
                 event.stopPropagation();
             });
         });
@@ -67,7 +67,7 @@ hsr.flipside = ((window, undefined) => {
             tile.classList.remove('is-open');
             tile.removeAttribute('style');
             tileContent.removeAttribute('style');
-            ourServicesPage.classList.remove('tile-open');
+            whatWeDoPage.classList.remove('tile-open');
         });
     }
 
