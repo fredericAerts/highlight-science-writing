@@ -53,7 +53,7 @@ h2 {
     line-height: 28px;
     font-weight: 700;
 
-    p + & {
+    p + &, form + & {
         margin-top: 35px;
     }
 }

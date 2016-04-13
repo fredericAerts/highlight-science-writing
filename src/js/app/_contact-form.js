@@ -1,10 +1,10 @@
 hsr = hsr || {};
 
-hsr.form = ((window, undefined) => {
+hsr.contactForm = ((window, undefined) => {
 
     let init, addEventListeners;
 
-    let inputFieldElements = [].slice.call(document.querySelectorAll( 'input.input__field' ));
+    let inputFieldElements = [].slice.call(document.querySelectorAll( '.contact-form .input__field' ));
 
     init = () => {
         addEventListeners();

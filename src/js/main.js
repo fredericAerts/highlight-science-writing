@@ -6,7 +6,7 @@ hsr.app = ((window, undefined) => {
     // On Dom ready
     let init = () => {
         hsr.nav.init();
-        hsr.form.init();
+        hsr.contactForm.init();
         hsr.dropcap.init();
         hsr.flipside.init();
         attachWindowEventHandlers();
