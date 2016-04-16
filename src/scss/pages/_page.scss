@@ -4,15 +4,15 @@
     display: none;
     width: 100%;
     max-width: 850px;
-    margin: 30px auto;
-    padding: 0 15px;
+    margin: 30px auto 0;
+    padding: 0 15px 80px;
 
     opacity: 0;
 
     @include transition(all .2s ease, opacity .1s ease);
 
     @media (min-width: $min-width-sm) {
-        margin: 60px auto;
+        margin: 60px auto 0;
     }
 
     &.active {

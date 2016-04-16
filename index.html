@@ -18,21 +18,23 @@
 </head>
 <body>
   <header class="header">
-    <div class="header__logo js-header__logo">
-      <img class="page--about__image__image" srcset="web/img/logo-header.png 1x, web/img/logo-header@2x.png 2x" alt="Highlight logo">
-    </div>
-    <div class="header__mobile-menu js-header__mobile-menu">
-      <span>Menu</span>
-      <span class="icon icon--menu fa fa-bars"></span>
-      <span class="icon icon--close fa fa-close"></span>
-    </div>
-    <div class="header__nav">
-      <div class="header__nav__links-wrapper js-nav-link-wrapper">
-        <button class="header__nav__link js-header__nav__link" data-target-index="0">What we do</button>
-        <button class="header__nav__link js-header__nav__link" data-target-index="1">About us</button>
-        <button class="header__nav__link js-header__nav__link" data-target-index="2">What clients say</button>
-        <button class="header__nav__link js-header__nav__link" data-target-index="3">Blog</button>
-        <button class="header__nav__link js-header__nav__link" data-target-index="4">Contact</button>
+    <div class="container">
+      <div class="header__logo js-header__logo">
+        <img class="page--about__image__image" srcset="web/img/logo-header.png 1x, web/img/logo-header@2x.png 2x" alt="Highlight logo">
+      </div>
+      <div class="header__mobile-menu js-header__mobile-menu">
+        <span>Menu</span>
+        <span class="icon icon--menu fa fa-bars"></span>
+        <span class="icon icon--close fa fa-close"></span>
+      </div>
+      <div class="header__nav">
+        <div class="header__nav__links-wrapper js-nav-link-wrapper">
+          <button class="header__nav__link js-header__nav__link" data-target-index="0">What we do</button>
+          <button class="header__nav__link js-header__nav__link" data-target-index="1">About us</button>
+          <button class="header__nav__link js-header__nav__link" data-target-index="2">What clients say</button>
+          <button class="header__nav__link js-header__nav__link" data-target-index="3">Blog</button>
+          <button class="header__nav__link js-header__nav__link" data-target-index="4">Contact</button>
+        </div>
       </div>
     </div>
   </header>
@@ -48,13 +50,9 @@
       At Highlight <strong>we are committed</strong> to give your research the platform it deserves, by helping you overcome potential hurdles in the preparation of your scientific documents.
     </p>
     <div class="hero__buttons js-hero__buttons">
-      <button data-target-index="0">Learn more</button>
-      <button data-target-index="4">Contact us</button>
+      <button class="button" data-target-index="0">Learn more</button>
+      <button class="button" data-target-index="4">Contact us</button>
     </div>
-  </div>
-    <span>
-
-    </span>
   </div>
 
   <!-- what we do -->
@@ -344,11 +342,24 @@
             <span class="input__label-content">Your message</span>
           </label>
         </span>
+        <span class="input input--button">
+          <button class="button">Send message<span class="icon fa fa-paper-plane"></span></button>
+        </span>
       </div>
     </form>
-    <h2>Contact us directly</h2>
+    <p>Or contact us directly via <a href="mailto:info@highlight-science-writing.com" target="_top">info@highlight-science-writing.com</a></p>
   </div><!-- ./contact -->
 
+  <div class="footer">
+    <div class="container">
+      <div class="footer__social">
+        <a class="icon icon--facebook fa fa-facebook-official" href="https://www.facebook.com/highlightsciencewriting" target="_blank"></a>
+        <a class="icon icon--twitter fa fa-twitter" href="https://twitter.com/highlight_sw" target="_blank"></a>
+        <a class="icon icon--linkedin fa fa-linkedin" href="http://www.linkedin.com/company/10385074" target="_blank"></a>
+      </div>
+      <!-- <div class="footer__content-info">website by <a href="http://www.fredericaerts.com" target="_blank">Frederic Aerts</a></div> -->
+    </div>
+  </div>
   <script>
     document.createElement("picture");
   </script>

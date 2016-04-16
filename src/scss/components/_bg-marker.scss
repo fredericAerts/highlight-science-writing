@@ -1,20 +1,19 @@
 .bg-marker {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     z-index: -1;
 
     display: none;
-    width: 5000px;
-    height: 550px;
-    margin-top: -489px;
-    margin-left: -2500px;
+    width: 100%;
+    height: 440px;
+    margin-top: -379px;
 
-    @include transform(rotate(0) translateZ(0));
+    @include transform(translateZ(0));
 
     background: $accent-color;
 
-    @include transition(all .6s ease, top .3s ease .6s, margin-top .3s ease .6s);
+    @include transition(top .3s ease, margin-top .3s ease);
 
     &:after {
         position: absolute;
@@ -31,7 +30,7 @@
 
         content: "";
 
-        @include transition(opacity 1s ease .3s);
+        @include transition(opacity 1s ease);
     }
 
     @media (min-width: $min-width-sm) {
@@ -41,13 +40,7 @@
     &.landing-page {
         top: 50%;
 
-        margin-top: -275px;
-
-        @include transform(rotate(-50deg) translateZ(0));
-
-        @media (min-width: $min-width-lg) {
-            @include transform(rotate(-45deg) translateZ(0));
-        }
+        margin-top: -220px;
 
         &:after { // box-shadow
             opacity: 0;

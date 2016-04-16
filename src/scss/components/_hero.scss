@@ -11,7 +11,7 @@
 
     opacity: 0;
 
-    @include transition(all .3s ease .6s, top .3s ease .6s, opacity .2s ease .6s);
+    @include transition(all .3s ease, top .3s ease, opacity .2s ease);
 
     @media (min-width: $min-width-sm) {
         width: 90%;
@@ -105,24 +105,4 @@
 
 .hero__buttons {
     text-align: left;
-
-    & button {
-        margin-right: 10px;
-        padding: 0 15px;
-        border: 1px solid $black;
-        border-radius: 18px;
-
-        color: $black;
-        font-size: 10px;
-
-        line-height: 30px;
-        text-transform: uppercase;
-
-        @media (min-width: $min-width-sm) {
-            margin-right: 20px;
-            padding: 0 20px;
-
-            font-size: 14px;
-        }
-    }
 }

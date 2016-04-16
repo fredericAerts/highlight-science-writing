@@ -11,7 +11,8 @@
 
 /*	General
 	=============================== */
-@import 'general/base';
+@import 'general/base',
+        'general/layout';
 
 /*  Pages
   =============================== */
@@ -24,8 +25,10 @@
         'components/header',
         'components/hero',
         'components/nav-link',
+        'components/button',
+        'components/flipside',
         'components/guarantee-list',
         'components/quote',
         'components/dropcap',
         'components/contact-form',
-        'components/flipside';
+        'components/footer';
