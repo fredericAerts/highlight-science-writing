@@ -321,30 +321,54 @@
     <h1>Contact</h1>
     <h2>Leave us a message</h2>
     <form class="contact-form">
-      <div class="inputs-wrapper col-2">
-        <span class="input">
-          <input class="input__field" type="text" id="input-name" />
-          <label class="input__label" for="input-name">
-            <span class="input__label-content">Your name</span>
-          </label>
-        </span>
-        <span class="input">
-          <input class="input__field" type="email" id="input-email" />
-          <label class="input__label" for="input-email">
-            <span class="input__label-content">Your email</span>
-          </label>
-        </span>
+      <div class="contact-form__thank-you">
+      <h1 class="contact-form__thank-you__title">Thanks.</h1>
+      <p class="contact-form__thank-you__text">
+        Your message has been successfully sent.
+      </p>
       </div>
       <div class="inputs-wrapper col-2">
-        <span class="input input--textarea">
-          <textarea class="input__field" type="text" id="input-message" rows="4"></textarea>
-          <label class="input__label" for="input-message">
-            <span class="input__label-content">Your message</span>
-          </label>
-        </span>
-        <span class="input input--button">
-          <button class="button">Send message<span class="icon fa fa-paper-plane"></span></button>
-        </span>
+        <div class="input-wrapper">
+          <span class="input">
+            <input class="input__field" type="text" id="input-name" />
+            <label class="input__label" for="input-name">
+              <span class="input__label-content">Your name</span>
+            </label>
+          </span>
+          <div class="error-messages">
+            <span class="input__error">Name required</span>
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <span class="input">
+            <input class="input__field" type="email" id="input-email" />
+            <label class="input__label" for="input-email">
+              <span class="input__label-content">Your email</span>
+            </label>
+          </span>
+          <div class="error-messages">
+            <span class="input__error">Email required</span>
+            <span class="input__error">Invalid email</span>
+          </div>
+        </div>
+      </div>
+      <div class="inputs-wrapper col-2">
+        <div class="input-wrapper">
+          <span class="input input--textarea">
+            <textarea class="input__field" type="text" id="input-message" rows="4"></textarea>
+            <label class="input__label" for="input-message">
+              <span class="input__label-content">Your message</span>
+            </label>
+          </span>
+          <div class="error-messages">
+            <span class="input__error">Message required</span>
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <span class="input input--button">
+            <button class="button js-submit-contact-form">Send message<span class="icon fa fa-paper-plane"></span></button>
+          </span>
+        </div>
       </div>
     </form>
     <p>Or contact us directly via <a href="mailto:info@highlight-science-writing.com" target="_top">info@highlight-science-writing.com</a></p>
