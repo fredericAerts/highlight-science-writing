@@ -30,7 +30,7 @@
 
         content: "";
 
-        @include transition(opacity 1s ease);
+        @include transition(opacity .3s ease);
     }
 
     @media (min-width: $min-width-sm) {
