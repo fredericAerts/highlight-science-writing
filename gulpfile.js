@@ -22,7 +22,6 @@ var paths = {
         'src/scss/**/*.scss'
       ],
       js: [
-        'node_modules/dropcap.js/dropcap.js',
         'src/js/vendor/*.js',
         'src/js/app/*.js',
         'src/js/*.js'

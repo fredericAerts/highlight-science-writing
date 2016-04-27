@@ -1,5 +1,16 @@
+@media screen and (min-width: 960px) {
+    html {
+
+    }
+}
+
 html {
     box-sizing: border-box;
+
+    @media (min-width: $min-width-md) { // prevent page jumping due to scrollbar abscence/presence
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -22,8 +33,6 @@ body {
     background: $grey-xxlight;
 
     overflow-x: hidden;
-
-    @include perspective(1000px);
 
     @media (min-width: $min-width-sm) {
         font-size: 16px;

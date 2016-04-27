@@ -17,6 +17,7 @@
 /*  Pages
   =============================== */
 @import 'pages/page',
+        'pages/page--what-we-do',
         'pages/page--about';
 
 /*  Components
@@ -28,7 +29,7 @@
         'components/button',
         'components/flipside',
         'components/guarantee-list',
-        'components/blog-post-preview',
+        'components/blog-post',
         'components/quote',
         'components/dropcap',
         'components/contact-form',

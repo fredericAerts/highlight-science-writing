@@ -30,7 +30,5 @@
     "gulp-watch": "^4.1.0",
     "jshint-stylish": "^1.0.0"
   },
-  "dependencies": {
-    "dropcap.js": "^1.0.1"
-  }
+  "dependencies": {}
 }
