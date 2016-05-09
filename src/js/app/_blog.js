@@ -57,6 +57,7 @@ hsr.blog = ((window, undefined) => {
 
                 window.setTimeout(() => {
                     bodyElement.style.overflow = 'auto';
+                    bodyElement.style.overflowX = 'hidden';
                     blogpost.classList.remove('active');
                 }, 300);
                 event.stopPropagation();
