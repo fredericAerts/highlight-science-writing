@@ -11,7 +11,7 @@
 
     opacity: 0;
 
-    @include transition(all .3s ease, top .3s ease, opacity .2s ease);
+    @include transition(all .3s ease .6s, top .3s ease .6s, opacity .2s ease .6s);
 
     @media (min-width: $min-width-sm) {
         width: 90%;
