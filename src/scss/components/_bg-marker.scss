@@ -1,14 +1,14 @@
 .bg-marker {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 0;
     z-index: -1;
 
     display: none;
-    width: 5000px;
+    width: 100%;
     height: 550px;
     margin-top: -489px;
-    margin-left: -2500px;
+    // margin-left: -2500px;
 
     @include transform(rotate(0) translateZ(0));
 
@@ -40,8 +40,11 @@
 
     &.landing-page {
         top: 50%;
+        left: 50%;
 
+        width: 5000px;
         margin-top: -275px;
+        margin-left: -2500px;
 
         @include transform(rotate(-50deg) translateZ(0));
 

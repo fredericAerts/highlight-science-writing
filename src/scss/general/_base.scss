@@ -32,6 +32,7 @@ body {
 
     background: $grey-xxlight;
 
+    overflow: auto;
     overflow-x: hidden;
 
     @media (min-width: $min-width-sm) {
