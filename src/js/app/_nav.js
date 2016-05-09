@@ -10,11 +10,11 @@ hsr.nav = ((window, undefined) => {
 
     let bgMarkerElement = document.querySelector('.js-bg-marker');
     let mobileMenuElement = document.querySelector('.js-header__mobile-menu');
-    let pageElements = [
-        document.querySelector('.js-what-we-do'),
-        document.querySelector('.js-about-us'),
-        document.querySelector('.js-what-clients-say'),
+    let pageElements = [ // index of array elements is data-target-index value
+        document.querySelector('.js-services'),
+        document.querySelector('.js-clients'),
         document.querySelector('.js-blog'),
+        document.querySelector('.js-about'),
         document.querySelector('.js-contact')
     ];
     let activePageIndex = -1; // landing page

@@ -129,7 +129,7 @@ gulp.task('scripts', function() {
     .pipe(plugins.babel())
     .pipe(gulp.dest('web/.temp/js'))
     .pipe(plugins.rename({suffix: '.min'}))
-    .pipe(plugins.uglify())
+    // .pipe(plugins.uglify())
     .pipe(gulp.dest('web/js'));
 });
 

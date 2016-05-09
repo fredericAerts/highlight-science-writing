@@ -7,7 +7,7 @@ hsr.flipside = ((window, undefined) => {
     let addEventListeners;
 
     // DOM variable
-    let whatWeDoPage = document.querySelector('.js-what-we-do');
+    let whatWeDoPage = document.querySelector('.js-services');
     let flipsideTileElements = [].slice.call(document.querySelectorAll('.flipside'));
 
     init = () => {
