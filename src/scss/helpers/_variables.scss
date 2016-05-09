@@ -13,6 +13,17 @@ $secondary-accent-color: #F44336;
 $secondary-accent-color--dark: #c90707;
 $tertiary-accent-color: #2196F3;
 
+$highlight-color-blue: #2196F3;
+$highlight-color-pink: #E91E63;
+$highlight-color-yellow: #FFEB3B;
+$highlight-color-green: #4CAF50;
+$highlight-color-orange: #FF9800;
+$highlight-color-purple: #9C27B0;
+$highlight-bg-colors-list-1: $highlight-color-blue $highlight-color-pink $accent-color;
+$highlight-colors-list-1: $white $white $black;
+$highlight-bg-colors-list-2: $highlight-color-green $highlight-color-orange $highlight-color-purple;
+$highlight-colors-list-2: $white $white $white;
+
 $primaryFont: 'Open Sans', sans-serif; // 300, 300italic, 700
 $secondaryFont: 'Quicksand', sans-serif; // 400, 700
 
