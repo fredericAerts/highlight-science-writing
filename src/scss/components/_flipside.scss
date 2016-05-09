@@ -161,48 +161,6 @@
     }
 }
 
-.flipside-container__row:nth-child(1) {
-    @for $i from 1 through length($highlight-bg-colors-list-1) {
-        .flipside-placeholder:nth-child(#{$i}) {
-
-            & .flipside__front {
-
-                &:hover {
-                    background-color: nth($highlight-bg-colors-list-1, $i);
-                    color: nth($highlight-colors-list-1, $i);
-                }
-            }
-
-            .flipside__back__content__footer__close {
-                background-color: nth($highlight-bg-colors-list-1, $i);
-                color: nth($highlight-colors-list-1, $i);
-            }
-        }
-
-    }
-}
-
-.flipside-container__row:nth-child(2) {
-    @for $i from 1 through length($highlight-bg-colors-list-2) {
-        .flipside-placeholder:nth-child(#{$i}) {
-
-            & .flipside__front {
-
-                &:hover {
-                    background-color: nth($highlight-bg-colors-list-2, $i);
-                    color: nth($highlight-colors-list-2, $i);
-                }
-            }
-
-            .flipside__back__content__footer__close {
-                background-color: nth($highlight-bg-colors-list-2, $i);
-                color: nth($highlight-colors-list-2, $i);
-            }
-        }
-
-    }
-}
-
 .flipside__back {
     position: absolute;
     @include transform(translateZ(-2px) rotateY(180deg));
@@ -301,4 +259,50 @@
     color: $grey;
     font-size: 11px;
     line-height: 15px;
+}
+
+/*  COLORS
+    ============================================================================= */
+// first tile row colors
+.flipside-container__row:nth-child(1) {
+    @for $i from 1 through length($highlight-bg-colors-list-1) {
+        .flipside-placeholder:nth-child(#{$i}) {
+
+            & .flipside__front {
+
+                &:hover {
+                    background-color: nth($highlight-bg-colors-list-1, $i);
+                    color: nth($highlight-colors-list-1, $i);
+                }
+            }
+
+            .flipside__back__content__footer__close {
+                background-color: nth($highlight-bg-colors-list-1, $i);
+                color: nth($highlight-colors-list-1, $i);
+            }
+        }
+
+    }
+}
+
+// second tile row colors
+.flipside-container__row:nth-child(2) {
+    @for $i from 1 through length($highlight-bg-colors-list-2) {
+        .flipside-placeholder:nth-child(#{$i}) {
+
+            & .flipside__front {
+
+                &:hover {
+                    background-color: nth($highlight-bg-colors-list-2, $i);
+                    color: nth($highlight-colors-list-2, $i);
+                }
+            }
+
+            .flipside__back__content__footer__close {
+                background-color: nth($highlight-bg-colors-list-2, $i);
+                color: nth($highlight-colors-list-2, $i);
+            }
+        }
+
+    }
 }
