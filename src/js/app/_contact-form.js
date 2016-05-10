@@ -41,6 +41,8 @@ hsr.contactForm = ((window, undefined) => {
         }
 
         function onFormSubmit(event) {
+            console.log('submitting'); // TODO: test this
+            submitButton.removeEventListener('click', onFormSubmit);
             let isNameEmpty = inputNameField.value.trim() === '',
             isEmailEmpty = inputEmailField.value.trim() === '',
             isEmailInvalid = validateEmail(inputEmailField.value.trim()),
@@ -70,15 +72,58 @@ hsr.contactForm = ((window, undefined) => {
             }
 
             if (!isNameEmpty && !isEmailEmpty && !isEmailInvalid && !isMessageEmpty) {
-                contactForm.classList.add('sent');
+                let url = 'http://www.fredericaerts.com/projects/highlight/backend/contact.php';
+                // let url = 'http://localhost:8888/backend/contact.php';
+                postAjax(url, serialize(contactForm), function(data){
+                    if (data === 'nok') {
+                        let feedbackTitleElement = document.querySelector('.contact-form__thank-you__title');
+                        let feedbackTextElement = document.querySelector('.contact-form__thank-you__text');
+                        feedbackTitleElement.textContent = 'Oops.'
+                        feedbackTextElement.innerHTML = 'Something went wrong. Please contact us directly via <a href="mailto:info@highlight-science-writing.com" target="_top">info@highlight-science-writing.com</a>'
+                    }
+                    contactForm.classList.add('sent');
+                });
+            }
+            else {
+                submitButton.addEventListener('click', onFormSubmit);
             }
 
             event.preventDefault();
         }
 
         function validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return !re.test(email);
+        }
+
+        function serialize(form) {
+            let field, s = [];
+            if (typeof form == 'object' && form.nodeName == "FORM") {
+                inputFieldElements.forEach((field) => {
+                    if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
+                        if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
+                            s[s.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
+                        }
+                    }
+                });
+            }
+            return s.join('&').replace(/%20/g, '+');
+        }
+
+        function postAjax(url, data, success) {
+            var params = typeof data == 'string' ? data : Object.keys(data).map(
+                    function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+                ).join('&');
+
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open('POST', url);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+            };
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            return xhr;
         }
     }
 

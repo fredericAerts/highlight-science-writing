@@ -362,15 +362,16 @@
     <h2>Leave us a message</h2>
     <form class="contact-form">
       <div class="contact-form__thank-you">
-      <h1 class="contact-form__thank-you__title">Thanks.</h1>
-      <p class="contact-form__thank-you__text">
-        Your message has been successfully sent.
-      </p>
+        <h1 class="contact-form__thank-you__title">Thanks.</h1>
+        <p class="contact-form__thank-you__text">
+          Your message has been successfully sent.
+        </p>
       </div>
+      <input class="contact-form__input-honeypot" type="email" name="email" />
       <div class="inputs-wrapper col-2">
         <div class="input-wrapper">
           <span class="input">
-            <input class="input__field" type="text" id="input-name" />
+            <input class="input__field" type="text" id="input-name" name="name" />
             <label class="input__label" for="input-name">
               <span class="input__label-content">Your name</span>
             </label>
@@ -381,7 +382,7 @@
         </div>
         <div class="input-wrapper">
           <span class="input">
-            <input class="input__field" type="email" id="input-email" />
+            <input class="input__field" type="email" id="input-email" name="emailAddress" />
             <label class="input__label" for="input-email">
               <span class="input__label-content">Your email</span>
             </label>
@@ -395,7 +396,7 @@
       <div class="inputs-wrapper col-2">
         <div class="input-wrapper">
           <span class="input input--textarea">
-            <textarea class="input__field" type="text" id="input-message" rows="4"></textarea>
+            <textarea class="input__field" type="text" id="input-message" rows="4" name="message"></textarea>
             <label class="input__label" for="input-message">
               <span class="input__label-content">Your message</span>
             </label>

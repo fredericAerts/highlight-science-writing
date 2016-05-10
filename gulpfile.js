@@ -179,7 +179,7 @@ gulp.task('watch', function() {
 
 /* serves at http://localhost:8080 */
 gulp.task('default', ['build'], function() {
-    gulp.start('webserver','livereload','watch');
+    gulp.start(/*'webserver',*/'livereload','watch');
 });
 
 gulp.task('build', ['clean'], function() {
