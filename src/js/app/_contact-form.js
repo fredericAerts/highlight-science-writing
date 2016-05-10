@@ -6,6 +6,7 @@ hsr.contactForm = ((window, undefined) => {
 
     let contactForm = document.querySelector('.contact-form'),
     inputFieldElements = [].slice.call(document.querySelectorAll('.contact-form .input__field')),
+    inputHoneypotField = document.querySelector('.contact-form #input-honeypot'),
     inputNameField = document.querySelector('.contact-form #input-name'),
     inputEmailField = document.querySelector('.contact-form #input-email'),
     inputMessageField = document.querySelector('.contact-form #input-message'),
@@ -41,7 +42,6 @@ hsr.contactForm = ((window, undefined) => {
         }
 
         function onFormSubmit(event) {
-            console.log('submitting'); // TODO: test this
             submitButton.removeEventListener('click', onFormSubmit);
             let isNameEmpty = inputNameField.value.trim() === '',
             isEmailEmpty = inputEmailField.value.trim() === '',
@@ -74,7 +74,7 @@ hsr.contactForm = ((window, undefined) => {
             if (!isNameEmpty && !isEmailEmpty && !isEmailInvalid && !isMessageEmpty) {
                 let url = 'http://www.fredericaerts.com/projects/highlight/backend/contact.php';
                 // let url = 'http://localhost:8888/backend/contact.php';
-                postAjax(url, serialize(contactForm), function(data){
+                postAjax(url, serialize(inputFieldElements.concat(inputHoneypotField)), function(data){
                     if (data === 'nok') {
                         let feedbackTitleElement = document.querySelector('.contact-form__thank-you__title');
                         let feedbackTextElement = document.querySelector('.contact-form__thank-you__text');
@@ -96,17 +96,15 @@ hsr.contactForm = ((window, undefined) => {
             return !re.test(email);
         }
 
-        function serialize(form) {
-            let field, s = [];
-            if (typeof form == 'object' && form.nodeName == "FORM") {
-                inputFieldElements.forEach((field) => {
-                    if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
-                        if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
-                            s[s.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
-                        }
+        function serialize(inputFields) {
+            let s = [];
+            inputFields.forEach((field) => {
+                if (field.name && !field.disabled && field.type != 'file' && field.type != 'reset' && field.type != 'submit' && field.type != 'button') {
+                    if ((field.type != 'checkbox' && field.type != 'radio') || field.checked) {
+                        s[s.length] = encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value);
                     }
-                });
-            }
+                }
+            });
             return s.join('&').replace(/%20/g, '+');
         }
 

@@ -17,7 +17,7 @@ function test_input($data) {
   return $data;
 }
 
-$to = 'fredericaerts@hotmail.com';
+$to = 'info@highlight-science-writing.com';
 $message = "Hieronder vind je een bericht verstuurd via de HIGHLIGHT website!\n\n".
         "From : $name \n".
         "Email : $email\n\n".
