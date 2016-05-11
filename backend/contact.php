@@ -23,7 +23,7 @@ $message = "Hieronder vind je een bericht verstuurd via de HIGHLIGHT website!\n\
         "Email : $email\n\n".
         "Message : \n $emailMessage ";
 if (empty($emailHoneyPot) && !empty($emailMessage) && !empty($email)){
-    mail($to, '[HIGHLIGHT bericht van website]', $message, 'From:'.$email);
+    mail($to, '[HIGHLIGHT bericht van website]', $message, 'From:'.$name);
     echo 'ok';
 }
 else{
