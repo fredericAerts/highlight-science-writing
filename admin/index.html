@@ -8,21 +8,43 @@
   <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 
-
-  <link rel="stylesheet" type="text/css" href="web/styles/style.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 </head>
 <body>
   <form>
-  <textarea class="editor"></textarea>
-  <button class="editor-submit" type="button">Submit</button>
-  <button class="editor-convert" type="button">Convert HTML</button>
+    <div>
+      <label for="folder">Id</label>
+      <input type="text" name="folder" id="folder" style="width:100%;"></input>
+    </div>
+    <br>
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" style="width:100%;"></input>
+    </div>
+    <br>
+    <p>Date: <input type="text" id="datepicker"></p>
+    <br>
+    <div>
+      <label for="description">Description</label>
+      <textarea name="description" id="description" rows="10" style="width:100%;"></textarea>
+    </div>
+    <br>
+    <textarea class="editor"></textarea>
+    <br>
+    <button class="editor-submit" type="button">Submit</button>
+    <!-- <button class="editor-convert" type="button">Convert HTML</button> -->
+    <br>
   </form>
 
   <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <!-- wysiwyg editor (https://www.tinymce.com/) -->
   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/app/tinymce.js"></script>
+  <script src="js/app/datepicker.js"></script>
+  <script src="js/app/form.js"></script>
+  <script src="js/vendor/datepicker-nl-BE.js"></script>
 </body>
 </html>
