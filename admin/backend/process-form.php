@@ -1,3 +1,36 @@
 <?php
-    echo "Handle HTML form data here";
+header('content-type: application/json; charset=utf-8');
+header("access-control-allow-origin: *");
+
+//test the code without first two lines, if it works you can erase them
+if (!empty($_POST))
+{
+    $folderTitle = $_POST['folder'];
+    $title = $_POST['title'];
+    $date = $_POST['date'];
+    $description= $_POST['description'];
+    $body = $_POST['bodyHtml'];
+
+
+    if(!is_dir($folderTitle)){
+        //Directory does not exist, so lets create it.
+        mkdir($folderTitle, 755, true);
+    }
+    $data = array(
+        "title" => $title,
+        "date"  => $date,
+        "description" => $description
+    );
+
+
+    $fh = fopen($_POST['folder'].'/meta.json', 'w') or die("Can't create file");
+    fwrite($fh, json_encode($data));
+    fclose($fh);
+
+    $fh = fopen($_POST['folder'].'/body.html', 'w') or die("Can't create file");
+    fwrite($fh,  $body);
+    fclose($fh);
+    echo 'success';
+}
+
 ?>

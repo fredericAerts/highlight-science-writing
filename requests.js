@@ -11,22 +11,14 @@ function getAjax(url, success) {
 
 /*  REQUESTS LISTING
     ================================================================ */
-getAjax('admin/backend/handler.php?property=folder', function(data) {
+
+//folder with this name should exist before fetching wanted data
+
+getAjax('admin/backend/handler.php?property=body&folder=existingFolder', function(data) {
     console.log('folder: ' + data);
 });
 
-getAjax('admin/backend/handler.php?property=title', function(data) {
+getAjax('admin/backend/handler.php?property=meta', function(data) {
     console.log('title: ' + data);
 });
 
-getAjax('admin/backend/handler.php?property=date', function(data) {
-    console.log('date: ' + data);
-});
-
-getAjax('admin/backend/handler.php?property=description', function(data) {
-    console.log('description: ' + data);
-});
-
-getAjax('admin/backend/handler.php?property=body', function(data) {
-    console.log('body: ' + data);
-});
