@@ -25,9 +25,9 @@ elseif(isset($_GET["property"]) && trim($_GET["property"]) == 'body') {
     if(isset($_GET['folder'])) {
         $body = file_get_contents($_GET['folder'].'/body.html');
 
-        $jsonizedBody = json_encode($body);
+        // $jsonizedBody = json_encode($body);
 
-        print_r(trim($jsonizedBody,'"'));
+        print_r(trim($body,'"'));
     }
 }
 else {

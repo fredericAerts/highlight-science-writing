@@ -282,48 +282,30 @@
   <!-- blog -->
   <div class="container page js-blog">
     <h1>Blog</h1>
-    <div class="blog-post-placeholder">
-      <article class="blog-post js-blog-post">
-        <div class="blog-post__header">
-          <div class="container">
-            <h1 class="blog-post__header__title">
-              Taking control of citations and references
-              <span class="icon fa fa-close"></span>
-            </h1>
-            <div class="blog-post__header__meta">
-              <span>APRIL 18, 2016</span>
+    <div class="js-blogposts-container">
+      <div class="blog-post-placeholder js-blog-post-template">
+        <article class="blog-post js-blog-post">
+          <div class="blog-post__header">
+            <div class="container">
+              <h1 class="blog-post__header__title js-blog-post-title">
+                <!-- title here -->
+                <span class="icon fa fa-close"></span>
+              </h1>
+              <div class="blog-post__header__meta">
+                <span class="js-blog-post-date">
+                  <!-- date here -->
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="container blog-post__content">
-          <p class="blog-post__intro">
-            About 15% of all papers I edit have manually inserted citations and references. Fifteen percent! I find this both baffling and frustrating. Why on earth would you put yourself through the process of typing in all those references? And on a more ego-centric note, why would you put an editor (me!) through the process of checking the formatting of all of these when a programme could do it for you for free?
-          </p>
-          <span class="blog-post__more">Read more...</span>
-        </div>
-      </article>
-    </div>
-    <div class="blog-post-placeholder">
-      <article class="blog-post js-blog-post">
-        <div class="blog-post__header">
-          <div class="container">
-            <h1 class="blog-post__header__title">
-              How to turn great research into a great paper
-              <span class="icon fa fa-close"></span>
-            </h1>
-            <div class="blog-post__header__meta">
-              <span>APRIL 18, 2016</span>
-            </div>
+          <div class="container blog-post__content">
+            <p class="blog-post__intro js-blog-post-intro">
+              <!-- description here -->
+            </p>
+            <span class="blog-post__more">Read more...</span>
           </div>
-        </div>
-        <div class="container blog-post__content">
-          <p class="blog-post__intro">
-            Writing may represent only an infinitesimal part of your work as a researcher, but it can make or break how all the other aspects are perceived. In the current scientific culture, your written output and its impact are the measures of your success, so you better bring your A game when preparing any publication. Here are some of the most important aspects that set a great paper apart from an average one (apart from the actual results, of course!):
-          </p>
-          <span class="blog-post__more">Read more...</span>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
     </div>
   </div><!-- ./blog -->
 
@@ -428,6 +410,5 @@
     document.createElement("picture");
   </script>
 	<script type="text/javascript" src="web/js/script.min.js"></script>
-  <script type="text/javascript" src="requests.js"></script>
 </body>
 </html>
