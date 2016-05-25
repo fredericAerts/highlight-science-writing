@@ -14,10 +14,12 @@ hsrBlog.form = (function(window, undefined) {
                 description: $("#description").val(),
                 bodyHtml: tinyMCE.activeEditor.getContent()
             }
-            formDataAsJSON = JSON.stringify(formData);
+            //conversion to json is, in this case, done on server
+            //formDataAsJSON = JSON.stringify(formData);
             $.post("backend/process-form.php", formDataAsJSON, function(data, status) {
                 console.log(data);
-            });
+            });  
+
         });
 
         // $('.editor-convert').click(function() {
