@@ -14,11 +14,11 @@ function getAjax(url, success) {
 
 //folder with this name should exist before fetching wanted data
 
-getAjax('admin/backend/handler.php?property=body&folder=existingFolder', function(data) {
-    console.log('folder: ' + data);
+getAjax('admin/backend/handler.php?property=body&folder=folder', function(data) {
+    console.log('body: ' + data);
 });
 
 getAjax('admin/backend/handler.php?property=meta', function(data) {
-    console.log('title: ' + data);
+    console.log('meta: ' + data);
 });
 

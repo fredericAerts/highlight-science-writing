@@ -1,10 +1,8 @@
 <?php
-header('content-type: application/json; charset=utf-8');
-header("access-control-allow-origin: *");
+// header('content-type: application/json; charset=utf-8');
+// header("access-control-allow-origin: *");
 
-//test the code without first two lines, if it works you can erase them
-if (!empty($_POST))
-{
+if (!empty($_POST)) {
     $folderTitle = $_POST['folder'];
     $title = $_POST['title'];
     $date = $_POST['date'];
@@ -12,10 +10,11 @@ if (!empty($_POST))
     $body = $_POST['bodyHtml'];
 
 
-    if(!is_dir($folderTitle)){
+    if(!is_dir($folderTitle)) {
         //Directory does not exist, so lets create it.
-        mkdir($folderTitle, 755, true);
+        mkdir($folderTitle, 0777, true);
     }
+
     $data = array(
         "title" => $title,
         "date"  => $date,
