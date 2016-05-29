@@ -2,9 +2,11 @@ hsr = hsr || {};
 
 hsr.blog = ((window, undefined) => {
 
-    let init, buildBlogPostBLocks, addClickHandler;
+    let init, buildBlogPostBLocks, addClickHandler, getAjax;
 
     let bodyElement = document.querySelector('body');
+
+    let urlPrefix = 'http://66.147.244.112/~highlii7/';
 
     init = () => {
         buildBlogPostBLocks();
@@ -14,7 +16,7 @@ hsr.blog = ((window, undefined) => {
         let blogPostsContainer = document.querySelector('.js-blogposts-container');
         let blogPostTemplate = document.querySelector('.js-blog-post-template');
 
-        getAjax('admin/backend/handler.php?property=meta', function(data) {
+        getAjax(urlPrefix + 'admin/backend/handler.php?property=meta', function(data) {
             let metaData = JSON.parse(data);
             let metaDataArray = [];
             // convert data to Array of objects
@@ -22,19 +24,31 @@ hsr.blog = ((window, undefined) => {
                 metaDataArray.push(metaData[key + '']);
             });
 
+            // make date property a proper Date object
+            metaDataArray.map(function(metaData) {
+                let dateValues = metaData.date.split('/');
+                metaData.date = new Date(dateValues[2], dateValues[1] - 1, dateValues[0]);
+                return metaData;
+            })
+
+            // sort on date
+            metaDataArray.sort(function(a, b) {
+                return b.date - a.date;
+            });
+
             metaDataArray.forEach(function(metaData) {
                 // create blogpost blocks
                 let blogPostPlaceholder = blogPostTemplate.cloneNode(true);
                 let titleElement = blogPostPlaceholder.querySelector('.js-blog-post-title');
                 let dateElement = blogPostPlaceholder.querySelector('.js-blog-post-date');
-                let introElement = blogPostPlaceholder.querySelector('.js-blog-post-intro');
+                let introElement = blogPostPlaceholder.querySelector('.js-blog-post-description');
 
                 titleElement.innerHTML = metaData.title + titleElement.innerHTML;
-                dateElement.textContent = metaData.date;
+                dateElement.textContent = formatDate(metaData.date);
                 introElement.textContent = metaData.description;
 
                 // add clickhandler to blogpost => content loaded & it expands
-                addClickHandler(blogPostPlaceholder.querySelector('.js-blog-post'));
+                addClickHandler(blogPostPlaceholder.querySelector('.js-blog-post'), metaData);
 
                 // remove original template
                 blogPostsContainer.appendChild(blogPostPlaceholder);
@@ -42,19 +56,27 @@ hsr.blog = ((window, undefined) => {
             blogPostTemplate.parentNode.removeChild(blogPostTemplate);
         });
 
-        function getAjax(url, success) {
-            let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            xhr.open('GET', url);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
-            };
-            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            xhr.send();
-            return xhr;
+        function formatDate(date) {
+            var monthNames = [
+              "January", "February", "March",
+              "April", "May", "June", "July",
+              "August", "September", "October",
+              "November", "December"
+            ];
+
+            var day = date.getDate();
+            var monthIndex = date.getMonth();
+            var year = date.getFullYear();
+
+            return monthNames[monthIndex] + ' ' + day + ', ' + year;
         }
     }
 
-    addClickHandler = (blogpost) => {
+    addClickHandler = (blogpost, metaData) => {
+        let blogPostContentElement = blogpost.querySelector('.js-blog-post-content');
+        let blogPostIntroElement = blogpost.querySelector('.js-blog-post-intro');
+        let blogPostSpinnerElement = blogpost.querySelector('.js-spinner');
+
         blogpost.addEventListener('click', (event) => {
             if (!blogpost.classList.contains('active')) {
                 bodyElement.style.overflow = 'hidden';
@@ -87,10 +109,31 @@ hsr.blog = ((window, undefined) => {
                 closeElement.blogPostDimensions = blogPostDimensions;
                 closeElement.removeEventListener('click', closeBlogPost);
                 closeElement.addEventListener('click', closeBlogPost);
+
+                blogPostIntroElement.style.display = 'none';
+                blogPostSpinnerElement.style.display = 'inline-block';
+                setTimeout(function() {
+                    blogPostSpinnerElement.style.display = 'inline-block';
+                    setTimeout(function() {
+                        blogPostSpinnerElement.classList.add('active');
+                    }, 50);
+                }, 250);
+                // get content
+                getAjax(urlPrefix + 'admin/backend/handler.php?property=body&folder=' + metaData.folder, function(data) {
+                    let bodyHtml = data;
+                    blogPostSpinnerElement.classList.remove('active');
+                    setTimeout(function() { // wait for spinner fade out
+                        blogPostSpinnerElement.style.display = 'none';
+                        blogPostContentElement.innerHTML = bodyHtml;
+                        blogPostContentElement.classList.add('active');
+                    }, 300);
+                });
             }
         });
 
         function closeBlogPost(event) {
+            blogPostContentElement.innerHTML = "";
+            blogPostIntroElement.style.display = 'block';
             blogpost.style.top = event.target.blogPostOffset.top + 'px';
             blogpost.style.left = event.target.blogPostOffset.left + 'px';
             blogpost.style.width = event.target.blogPostDimensions.width + 'px';
@@ -103,6 +146,17 @@ hsr.blog = ((window, undefined) => {
             }, 300);
             event.stopPropagation();
         }
+    }
+
+    getAjax = (url, success) => {
+        let xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        xhr.open('GET', url);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
+        };
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send();
+        return xhr;
     }
 
     return {

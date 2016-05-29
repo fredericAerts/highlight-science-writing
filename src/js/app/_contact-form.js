@@ -4,6 +4,8 @@ hsr.contactForm = ((window, undefined) => {
 
     let init, addEventListeners;
 
+    let urlPrefix = 'http://66.147.244.112/~highlii7/';
+
     let contactForm = document.querySelector('.contact-form'),
     inputFieldElements = [].slice.call(document.querySelectorAll('.contact-form .input__field')),
     inputHoneypotField = document.querySelector('.contact-form #input-honeypot'),
@@ -72,7 +74,7 @@ hsr.contactForm = ((window, undefined) => {
             }
 
             if (!isNameEmpty && !isEmailEmpty && !isEmailInvalid && !isMessageEmpty) {
-                let url = 'http://www.fredericaerts.com/projects/highlight/backend/contact.php';
+                let url = urlPrefix + 'backend/contact.php';
                 // let url = 'http://localhost:8888/backend/contact.php';
                 postAjax(url, serialize(inputFieldElements.concat(inputHoneypotField)), function(data){
                     if (data === 'nok') {

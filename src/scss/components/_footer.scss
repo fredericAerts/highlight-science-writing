@@ -1,14 +1,7 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
     width: 100%;
-    padding-top: 10px;
 
     text-align: center;
-
-    background: $white;
 
     .on-landing-page & {
         display: none;

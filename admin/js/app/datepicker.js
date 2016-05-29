@@ -5,7 +5,7 @@ hsrBlog.datepicker = (function(window, undefined) {
     var init;
 
 
-    init = () => {
+    init = function() {
         $( "#datepicker" ).datepicker($.datepicker.regional[ "nl-BE" ]);
     };
 

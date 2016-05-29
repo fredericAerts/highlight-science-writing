@@ -93,7 +93,7 @@ hsr.nav = ((window, undefined) => {
                 targetPageElement.classList.add('positioned');
                 addActiveClassToNavlink();
                 bodyElement.classList.remove('on-landing-page');
-                bodyElement.style.height = 'auto';
+                bodyElement.style.height = '100%';
             }, 700);
         }
         else if (targetPageIndex < activePageIndex) { // new page moves in from left

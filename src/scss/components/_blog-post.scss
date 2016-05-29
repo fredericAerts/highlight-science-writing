@@ -20,13 +20,14 @@
 
     &.active {
         position: fixed;
+        z-index: 1;
 
         overflow-y: scroll;
 
         cursor: auto;
 
         &.positioned {
-            padding: 75px 0 0;
+            padding: 75px 0 40px;
         }
     }
 }
@@ -96,7 +97,7 @@
     font-size: 12px;
 }
 
-.blog-post__content {
+.blog-post__intro {
     padding-top: 5px;
 
     @media (min-width: $min-width-sm) {
@@ -104,12 +105,38 @@
     }
 }
 
-
-.blog-post__intro {
-
-}
-
 .blog-post__more {
     color: $grey;
     font-size: 12px;
 }
+
+.blog-post__spinner-icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    display: none;
+    margin-left: -16px;
+
+    opacity: 0;
+    @include transition(opacity .3s ease);
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+/*  CONTENT
+    ======================================================================================== */
+.blog-post__content {
+    opacity: 0;
+    @include transition(opacity .3s ease);
+
+    &.active {
+        padding-top: 15px;
+
+        opacity: 1;
+    }
+}
+
+

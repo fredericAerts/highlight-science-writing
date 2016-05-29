@@ -4,7 +4,7 @@ var hsrBlog = hsrBlog || {};
 hsrBlog.app = (function(window, undefined) {
 
     // On Dom ready
-    var init = () => {
+    var init = function() {
         hsrBlog.tinymce.init();
         hsrBlog.datepicker.init();
         hsrBlog.form.init();

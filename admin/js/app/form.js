@@ -2,9 +2,11 @@ hsrBlog = hsrBlog || {};
 
 hsrBlog.form = (function(window, undefined) {
 
-    var init;
+    var init, populateBlogPostsTable;
 
-    init = () => {
+    var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/admin/';
+
+    init = function() {
 
         $('.editor-submit').click(function() {
             var formData = {
@@ -20,13 +22,31 @@ hsrBlog.form = (function(window, undefined) {
             });
         });
 
+        $('.editor-clear').click(function() {
+            $("#folder").val("");
+            $("#title").val("");
+            $("#datepicker").val("");
+            $("#description").val("");
+            tinyMCE.activeEditor.setContent("");
+        });
+
         // $('.editor-convert').click(function() {
         //     tinyMCE.activeEditor.setContent(tinyMCE.activeEditor.getContent({format:'text'}));
         // });
 
-        $.get("backend/handler.php?property=meta", function(data) {
-            let metaData = JSON.parse(data);
-            let metaDataArray = [];
+        $('.js-modal-blog-posts').on('show.bs.modal', function (e) {
+            populateBlogPostsTable();
+        });
+
+
+    };
+
+    populateBlogPostsTable = function() {
+        $('.modal-body .table').html("");
+
+        $.get(urlPrefix + "backend/handler.php?property=meta", function(data) {
+            var metaData = JSON.parse(data);
+            var metaDataArray = [];
             // convert data to Array of objects
             Object.keys(metaData).forEach(function(key) {
                 metaDataArray.push(metaData[key + '']);
@@ -34,7 +54,7 @@ hsrBlog.form = (function(window, undefined) {
             metaDataArray.forEach(function(post) {
                 var tableRow = $("<tr><td>" + post.title + "</td></tr>");
                 tableRow.click(function() {
-                    $.get("backend/handler.php?property=body&folder=" + post.folder, function(bodyHtml) {
+                    $.get(urlPrefix + "backend/handler.php?property=body&folder=" + post.folder, function(bodyHtml) {
                         tinyMCE.activeEditor.setContent(bodyHtml);
                         $('.js-modal-blog-posts').modal('hide');
                         $('.js-input-folder').val(post.folder);
@@ -45,10 +65,8 @@ hsrBlog.form = (function(window, undefined) {
                 });
                 $('.modal-body .table').append(tableRow);
             });
-
         });
-
-    };
+    }
 
     return {
         init: init

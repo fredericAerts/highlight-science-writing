@@ -5,7 +5,7 @@ hsrBlog.tinymce = (function(window, undefined) {
     var init;
 
 
-    init = () => {
+    init = function() {
         tinymce.init({
             selector: 'textarea.editor',
             height: 500,

@@ -18,386 +18,442 @@
 	<link rel="stylesheet" type="text/css" href="web/styles/style.min.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="header__logo js-header__logo">
-        <img class="page--about__image__image" srcset="web/img/logo-header.png 1x, web/img/logo-header@2x.png 2x" alt="Highlight logo">
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__logo js-header__logo">
+          <img class="page--about__image__image" srcset="web/img/logo-header.png 1x, web/img/logo-header@2x.png 2x" alt="Highlight logo">
+        </div>
+        <div class="header__mobile-menu js-header__mobile-menu">
+          <span>Menu</span>
+          <span class="icon icon--menu fa fa-bars"></span>
+          <span class="icon icon--close fa fa-close"></span>
+        </div>
+        <div class="header__nav">
+          <div class="header__nav__links-wrapper js-nav-link-wrapper">
+            <button class="header__nav__link js-header__nav__link" data-target-index="0">Services</button>
+            <button class="header__nav__link js-header__nav__link" data-target-index="1">Clients</button>
+            <button class="header__nav__link js-header__nav__link" data-target-index="2">Blog</button>
+            <button class="header__nav__link js-header__nav__link" data-target-index="3">About</button>
+            <button class="header__nav__link js-header__nav__link" data-target-index="4">Contact</button>
+          </div>
+        </div>
       </div>
-      <div class="header__mobile-menu js-header__mobile-menu">
-        <span>Menu</span>
-        <span class="icon icon--menu fa fa-bars"></span>
-        <span class="icon icon--close fa fa-close"></span>
-      </div>
-      <div class="header__nav">
-        <div class="header__nav__links-wrapper js-nav-link-wrapper">
-          <button class="header__nav__link js-header__nav__link" data-target-index="0">Services</button>
-          <button class="header__nav__link js-header__nav__link" data-target-index="1">Clients</button>
-          <button class="header__nav__link js-header__nav__link" data-target-index="2">Blog</button>
-          <button class="header__nav__link js-header__nav__link" data-target-index="3">About</button>
-          <button class="header__nav__link js-header__nav__link" data-target-index="4">Contact</button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="bg-marker js-bg-marker landing-page"></div>
-  <div class="hero">
-    <h1 class="hero__title">
-      Highlight
-    </h1>
-    <h2 class="hero__subtitle">
-      Communicating research with <i>impact</i>
-    </h2>
-    <p class="hero__intro">
-      At Highlight <strong>we are committed</strong> to give your research the platform it deserves, by helping you overcome potential hurdles in the preparation of your scientific documents.
-    </p>
-    <div class="hero__buttons js-hero__buttons">
-      <button class="button" data-target-index="0">Learn more</button>
-      <button class="button" data-target-index="4">Contact us</button>
-    </div>
-  </div>
-
-  <!-- what we do -->
-  <div class="container page page--services js-services">
-    <h1 class="blur-when-tile-opened">What we do &amp; how we work</h1>
-
-    <div class="flipside-container">
-      <div class="flipside-container__row">
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">Proofreading</h1>
-                <p class="flipside__back__content__text">
-                  English is not your native language or you just need a second pair of eyes to double-check your text for grammatical errors and typo’s? A thorough proofreading of your manuscript, dissertation or grant application by Highlight will result in a clean and error-free document that will make a professional impression on any jury member or reviewer.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>Proofreading</span>
-            </div>
-          </div>
-        </div>
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">Comprehensive editing</h1>
-                <p class="flipside__back__content__text">
-                  You provide the content, we help scope your document. This includes intensive restructuring and/or revision of your text, reference database management, proofreading and formatting. If necessary, we can write an abstract, summary or cover letter to accompany your document. Choose this service when you need help in writing your scientific paper or report or, for example, when you need someone to streamline a document written by multiple authors.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>Comprehensive editing</span>
-            </div>
-          </div>
-        </div>
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">Formatting</h1>
-                <p class="flipside__back__content__text">
-                  If you are not sure about all the bells and whistles or you simply don’t have time to reformat your document for the target journal, Highlight can do it for you. We make sure that all elements of your text, including references, figures, legends and headings are formatted in a consistent manner and in accordance to journal or grant formatting guidelines.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>Formatting</span>
-            </div>
-          </div>
-        </div>
-      </div><!-- ./row -->
-      <div class="flipside-container__row">
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">Science and medical writing</h1>
-                <p class="flipside__back__content__text">
-                  At Highlight we also offer content writing for both scientific communication (including abstracts and posters, advertising material, presentations or research proposals) and outreach activities (articles, summaries, blogs, press releases…). Prices depend on the scope and length of the deliverable.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>Science and medical writing</span>
-            </div>
-          </div>
-        </div>
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">Online communication and social media</h1>
-                <p class="flipside__back__content__text">
-                  Building your online presence is a must, also for scientists. We can help you create and maintain an online profile that fits your communication needs. Examples include development of your institute, lab or project website, building a platform to engage with your peers or the public, dissemination of your research via a press release, newsletter or blog, or through existing social media channels such as Twitter, Facebook and LinkedIn.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>Online communication and social media</span>
-            </div>
-          </div>
-        </div>
-        <div class="flipside-placeholder">
-          <div class="flipside">
-            <div class="flipside__back">
-              <div class="flipside__back__content">
-                <h1 class="flipside__back__content__title">English-to-Dutch translation</h1>
-                <p class="flipside__back__content__text">
-                  We provide a high-quality translation service for science-related documents from Dutch to English and vice versa. Contact us if you need a translation of your research proposal, your press release, technical report or educational material.
-                </p>
-                <div class="flipside__back__content__footer">
-                  <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
-                </div>
-              </div>
-            </div>
-            <div class="flipside__front">
-              <span>English-to-Dutch translation</span>
-            </div>
-          </div>
-        </div>
-      </div><!-- ./row -->
-      <p class="flipside-instruction blur-when-tile-opened">Learn more by selecting a service above</p>
-    </div><!-- ./flipside-container -->
-
-    <div class="blur-when-tile-opened">
-      <h2>How we work</h2>
-      <p>
-        <span class="nav-link js-nav-link" data-target-index="4">Let us know</span> what your writing or editing needs are: the size and scope of your document, the specific assistance you need and the deadline. If applicable, send us your documents or share them via dropbox. We’ll get back to you within 24 h with a price quote.
+    </header>
+    <div class="bg-marker js-bg-marker landing-page"></div>
+    <div class="hero">
+      <h1 class="hero__title">
+        Highlight
+      </h1>
+      <h2 class="hero__subtitle">
+        Communicating research with <i>impact</i>
+      </h2>
+      <p class="hero__intro">
+        At Highlight <strong>we are committed</strong> to give your research the platform it deserves, by helping you overcome potential hurdles in the preparation of your scientific documents.
       </p>
-      <div>We guarantee:</div>
-      <div class="guarantee-lists-wrapper">
-        <ul class="guarantee-list">
-          <li class="clearfix">
-            <span class="guarantee-list__number">1</span>
-            <p class="guarantee-list__text">
-              A fast turnaround time
-            </p>
-          </li>
-          <li class="clearfix">
-            <span class="guarantee-list__number">2</span>
-            <p class="guarantee-list__text">
-              100% deadline conformance
-            </p>
-          </li>
-          <li class="clearfix">
-            <span class="guarantee-list__number">3</span>
-            <p class="guarantee-list__text">
-              Error-free, professional and attractive documents
-            </p>
-          </li>
-        </ul>
-        <ul class="guarantee-list">
-          <li class="clearfix">
-            <span class="guarantee-list__number">4</span>
-            <p class="guarantee-list__text">
-              Style and language tailored to specific goals and audience, never compromising on scientific accuracy
-            </p>
-          </li>
-          <li class="clearfix">
-            <span class="guarantee-list__number">5</span>
-            <p class="guarantee-list__text">
-              A constructive dialogue between author and editor
-            </p>
-          </li>
-        </ul>
+      <div class="hero__buttons js-hero__buttons">
+        <button class="button" data-target-index="0">Learn more</button>
+        <button class="button" data-target-index="4">Contact us</button>
       </div>
-      <p>
-        We can work on virtually any text file, Word, Pages, LaTeX, you name it!
-      </p>
-      <h2>Something else on your mind? <span class="nav-link js-nav-link" data-target-index="4">Get in touch</span>!</h2>
-      <p>
-        You need to prepare a workshop for kids on your work? You are speaking to a patient organization and are not sure how to approach this? You have just published a big breakthrough and need help pitching your story to the press? You are organizing a workshop on how to publish? We are happy to help you out with all of your science-related communication needs. Just get in touch and we can explore how we can work together.
-      </p>
     </div>
-  </div><!-- ./what we do -->
 
-  <!-- what clients say -->
-  <div class="container page js-clients">
-    <h1>What clients say</h1>
-    <div class="quotes-wrapper">
-      <blockquote class="quote">
-        <div class="quote__stars">
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-        </div>
-        <p>
-          Thank you very much for your editing! It really helped me to finish it up. I would be glad if you could do the language checks and editing of my future manuscripts, too!
-        </p>
-        <footer>— Researcher at the Charles University of Prague, Czech Republic</footer>
-      </blockquote>
-      <blockquote class="quote">
-        <div class="quote__stars">
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-        </div>
-        <p>
-          This was my first manuscript as First author; the editing has been rapid, precise and appropriate, as well as the formatting according to the Journal style.
-        </p>
-        <footer>— Researcher at Cagliari University, Italy</footer>
-      </blockquote>
-      <blockquote class="quote">
-        <div class="quote__stars">
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-        </div>
-        <p>
-          You edited my paper very thoroughly. Looking forward to the next editing.
-        </p>
-        <footer>— Researcher at Daejeon University, South-Korea</footer>
-      </blockquote>
-      <blockquote class="quote">
-        <div class="quote__stars">
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-          <span class="icon fa fa-star"></span>
-        </div>
-        <p>
-          Thank you very much for editing our manuscript. I appreciate very much the changes you’ve made to improve the flow of the writing.
-        </p>
-        <footer>— Researcher at the BioCruces Health Research Institute, Spain</footer>
-      </blockquote>
-    </div>
-  </div><!-- ./what clients say -->
+    <!-- what we do -->
+    <div class="container page page--services js-services">
+      <h1 class="blur-when-tile-opened">What we do</h1>
 
-  <!-- blog -->
-  <div class="container page js-blog">
-    <h1>Blog</h1>
-    <div class="js-blogposts-container">
-      <div class="blog-post-placeholder js-blog-post-template">
-        <article class="blog-post js-blog-post">
-          <div class="blog-post__header">
-            <div class="container">
-              <h1 class="blog-post__header__title js-blog-post-title">
-                <!-- title here -->
-                <span class="icon fa fa-close"></span>
-              </h1>
-              <div class="blog-post__header__meta">
-                <span class="js-blog-post-date">
-                  <!-- date here -->
-                </span>
+      <div class="flipside-container">
+        <div class="flipside-container__row">
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">Proofreading</h1>
+                  <p class="flipside__back__content__text">
+                    English is not your native language or you just need a second pair of eyes to double-check your text for grammatical errors and typo’s? A thorough proofreading of your manuscript, dissertation or grant application by HIGHLIGHT will result in a clean and error-free document that will make a professional impression on any jury member or reviewer.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>Proofreading</span>
               </div>
             </div>
           </div>
-          <div class="container blog-post__content">
-            <p class="blog-post__intro js-blog-post-intro">
-              <!-- description here -->
-            </p>
-            <span class="blog-post__more">Read more...</span>
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">Comprehensive editing</h1>
+                  <p class="flipside__back__content__text">
+                    You provide the content, we help scope your document. This includes intensive restructuring and/or revision of your text, reference database management, proofreading and formatting. If necessary, we can write an abstract, summary or cover letter to accompany your document. Choose this service when you need help in writing your scientific paper or report or, for example, when you need someone to streamline a document written by multiple authors.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>Comprehensive editing</span>
+              </div>
+            </div>
           </div>
-        </article>
-      </div>
-    </div>
-  </div><!-- ./blog -->
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">Formatting</h1>
+                  <p class="flipside__back__content__text">
+                    If you are not sure about all the bells and whistles or you simply don’t have time to reformat your document for the target journal, HIGHLIGHT can do it for you. We make sure that all elements of your text, including references, figures, legends and headings are formatted in a consistent manner and in accordance to journal or grant formatting guidelines.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>Formatting</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- ./row -->
+        <div class="flipside-container__row">
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">Science and medical writing</h1>
+                  <p class="flipside__back__content__text">
+                    At HIGHLIGHT we also offer content writing for scientific communication (including abstracts and posters, advertising material, presentations or research proposals) and outreach activities (articles, summaries, blogs, press releases…). Prices depend on the scope and length of the deliverable.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>Science and medical writing</span>
+              </div>
+            </div>
+          </div>
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">Online communication and social media</h1>
+                  <p class="flipside__back__content__text">
+                    Building your online presence is a must, also for scientists. We can help you create and maintain an online profile that fits your communication needs. Examples include development of your institute, lab or project website, building a platform to engage with your peers or the public, dissemination of your research via a press release, newsletter or blog, or through existing social media channels such as Twitter, Facebook and LinkedIn.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>Online communication and social media</span>
+              </div>
+            </div>
+          </div>
+          <div class="flipside-placeholder">
+            <div class="flipside">
+              <div class="flipside__back">
+                <div class="flipside__back__content">
+                  <h1 class="flipside__back__content__title">English-to-Dutch translation</h1>
+                  <p class="flipside__back__content__text">
+                    We provide a high-quality translation service for science-related documents from Dutch to English and vice versa. Contact us if you need a translation of your research proposal, your press release, technical report or educational material.
+                  </p>
+                  <div class="flipside__back__content__footer">
+                    <button class="flipside__back__content__footer__close js-close-flip">Got it!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="flipside__front">
+                <span>English-to-Dutch translation</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- ./row -->
+        <p class="flipside-instruction blur-when-tile-opened">Learn more by selecting a service above</p>
+      </div><!-- ./flipside-container -->
 
-  <!-- about us -->
-  <div class="container page page--about js-about">
-    <h1>Hi!</h1>
-    <h2>We are Highlight Science Writing. We offer communication services for researchers.</h2>
-    <p>
-      We aim to put <i>your</i> research in the spotlight. We believe it is important that all research results—big or small—are disseminated beyond the laboratory. Whether you are preparing a manuscript for peer review or a press release for the general public, clear communication is essential for successful knowledge transfer.
-    </p>
-    <p>
-      When communicating science to different target audiences, ranging from specialists in our field to funding agencies, policy makers or patients, the language and objectives might be different. However, in all circumstances, you need to demonstrate the importance of your research question and be transparent and correct when reporting your results. Finding the right words can be challenging and time-consuming, even for experienced researchers writing in their native language. We can help you overcome potential hurdles in the preparation of your scientific documents, so your research gets the platform it deserves.
-    </p>
-    <h2>Meet the editor</h2>
-    <div class="page--about__image">
-      <img class="page--about__image__image" srcset="web/img/about-us.jpg 1x, web/img/about-us@2x.jpg 2x" alt="Liesbeth Aerts">
-      <div class="page--about__image__meta">
-        <span class="page--about__image__meta__title">Liesbeth Aerts</span><br>
-        <span class="page--about__image__meta__text">PhD and Scientific editor<br>at Highlight</span>
-      </div>
-    </div>
-    <p>
-      Liesbeth Aerts is an experienced scientific editor who has assisted researchers from all continents with the preparation of their publications. She has edited hundreds of papers for different journals including Nature Communications, PLoS Biology, the Royal Society of Chemistry Journal, the Journal of Biological Chemistry, and many others.
-    </p>
-    <p>
-      Liesbeth holds a PhD in Biomedical Sciences and a Post-Graduate diploma in Science Communication. While her own research is focused on neurodegeneration, she has a very broad interest and background in life sciences. Her complementary technical (MSc in Bioscience Engineering) and clinical (MSc in Clinical Neuroscience) background has enabled her to successfully work with researchers in a wide range of fields, including immunology, cancer biology, proteomics, genetics, food technology and biomass production.
-    </p>
-    <p>
-      She has also been involved in numerous outreach activities, delivering presentations or writing about science for kids, for patients or for society at large.
-    </p>
-  </div><!-- ./about us -->
-
-  <!-- contact -->
-  <div class="container page js-contact">
-    <h1>Get in touch!</h1>
-    <h2>Leave us a message</h2>
-    <form class="contact-form">
-      <div class="contact-form__thank-you">
-        <h1 class="contact-form__thank-you__title">Thanks.</h1>
-        <p class="contact-form__thank-you__text">
-          Your message has been successfully sent.
+      <div class="blur-when-tile-opened">
+        <h2>How we work</h2>
+        <p>
+          <span class="nav-link js-nav-link" data-target-index="4">Let us know</span> what your writing or editing needs are: the size and scope of your document, the specific assistance you need and the deadline. If applicable, send us your documents or share them via dropbox. We’ll get back to you within 24 h with a price quote.
+        </p>
+        <div>We guarantee:</div>
+        <div class="guarantee-lists-wrapper">
+          <ul class="guarantee-list">
+            <li class="clearfix">
+              <span class="guarantee-list__number">1</span>
+              <p class="guarantee-list__text">
+                A fast turnaround time
+              </p>
+            </li>
+            <li class="clearfix">
+              <span class="guarantee-list__number">2</span>
+              <p class="guarantee-list__text">
+                100% deadline conformance
+              </p>
+            </li>
+            <li class="clearfix">
+              <span class="guarantee-list__number">3</span>
+              <p class="guarantee-list__text">
+                Error-free, professional and attractive documents
+              </p>
+            </li>
+          </ul>
+          <ul class="guarantee-list">
+            <li class="clearfix">
+              <span class="guarantee-list__number">4</span>
+              <p class="guarantee-list__text">
+                Style and language tailored to specific goals and audience, never compromising on scientific accuracy
+              </p>
+            </li>
+            <li class="clearfix">
+              <span class="guarantee-list__number">5</span>
+              <p class="guarantee-list__text">
+                A constructive dialogue between author and editor
+              </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+          We can work on virtually any text file, Word, Pages, LaTeX, you name it!
+        </p>
+        <h2>Something else on your mind?</h2>
+        <p>
+          You need to prepare a workshop for kids on your work? You are speaking to a patient organization and are not sure how to approach this? You have just published a big breakthrough and need help pitching your story to the press? You are organizing a workshop on how to publish? We are happy to help you out with all of your science-related communication needs. Just get in touch and we can explore how we can work together.
+        </p>
+        <p>
+          <span class="nav-link js-nav-link" data-target-index="4">Get in touch</span>!
         </p>
       </div>
-      <input class="contact-form__input-honeypot" id="input-honeypot" type="email" name="email" />
-      <div class="inputs-wrapper col-2">
-        <div class="input-wrapper">
-          <span class="input">
-            <input class="input__field" type="text" id="input-name" name="name" />
-            <label class="input__label" for="input-name">
-              <span class="input__label-content">Your name</span>
-            </label>
-          </span>
-          <div class="error-messages">
-            <span class="input__error">Name required</span>
-          </div>
-        </div>
-        <div class="input-wrapper">
-          <span class="input">
-            <input class="input__field" type="email" id="input-email" name="emailAddress" />
-            <label class="input__label" for="input-email">
-              <span class="input__label-content">Your email</span>
-            </label>
-          </span>
-          <div class="error-messages">
-            <span class="input__error">Email required</span>
-            <span class="input__error">Invalid email</span>
-          </div>
-        </div>
-      </div>
-      <div class="inputs-wrapper col-2">
-        <div class="input-wrapper">
-          <span class="input input--textarea">
-            <textarea class="input__field" type="text" id="input-message" rows="4" name="message"></textarea>
-            <label class="input__label" for="input-message">
-              <span class="input__label-content">Your message</span>
-            </label>
-          </span>
-          <div class="error-messages">
-            <span class="input__error">Message required</span>
-          </div>
-        </div>
-        <div class="input-wrapper">
-          <span class="input input--button">
-            <button class="button js-submit-contact-form" type="button">Send message<span class="icon fa fa-paper-plane"></span></button>
-          </span>
-        </div>
-      </div>
-    </form>
-    <p>Or contact us directly via <a href="mailto:info@highlight-science-writing.com" target="_top">info@highlight-science-writing.com</a></p>
-  </div><!-- ./contact -->
+    </div><!-- ./what we do -->
 
-  <!-- <div class="footer">
+    <!-- what clients say -->
+    <div class="container page js-clients">
+      <h1>What clients say</h1>
+      <div class="quotes-wrapper">
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            Thank you very much for your editing! It really helped me to finish it up. I would be glad if you could do the language checks and editing of my future manuscripts, too!
+          </p>
+          <footer>— Researcher at the Charles University of Prague, Czech Republic</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            The editing is as careful as usual. The editor is familiar with the subject area and edited in a scrupulous manner. Details were taken good care of. She could fully understand my meaning and used accurate language.
+          </p>
+          <footer>— Researcher at the Ocean University of China, China</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            This was my first manuscript as First author; the editing has been rapid, precise and appropriate, as well as the formatting according to the Journal style.
+          </p>
+          <footer>— Researcher at Cagliari University, Italy</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            Thank you very much for editing our manuscript. I appreciate very much the changes you’ve made to improve the flow of the writing.
+          </p>
+          <footer>— Researcher at the BioCruces Health Research Institute, Spain</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            You edited my paper very thoroughly. Looking forward to the next editing.
+          </p>
+          <footer>— Researcher at Daejeon University, South-Korea</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            Comments were clear and easy to understand
+          </p>
+          <footer>— Researcher at Keio University, Japan</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            Liesbeth did a fantastic job to edit a 40-page, 80,000-word document over 3 iterations under a very tight timeline and with >150 citations to add. She worked tirelessly to get the job done and provided both grammatical, spelling as well as substantial edits to the content. She demonstrated a dedication and attention to detail that is hard to find and really improved the quality of our report. It was a pleasure to work with Liesbeth.
+          </p>
+          <footer>— Researcher, National Renewable Energy Laboratory, Golden, Colorado, USA</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote__stars">
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+            <span class="icon fa fa-star"></span>
+          </div>
+          <p>
+            Hiring Highlight was the right choice for me. From now on, I can focus 100% on good science while they edit my manuscript ready-to-submit.
+          </p>
+          <footer>— Researcher at KU Leuven, Belgium</footer>
+        </blockquote>
+      </div>
+    </div><!-- ./what clients say -->
+
+    <!-- blog -->
+    <div class="container page js-blog">
+      <h1>Blog</h1>
+      <p>
+        Follow us on <a href="https://www.facebook.com/highlightsciencewriting" target="_blank">Facebook</a> or <a href="https://twitter.com/highlight_sw" target="_blank">Twitter</a> for the latest news on science communications and scholarly publishing, or subscribe to our newsletter.
+      </p>
+      <div class="js-blogposts-container">
+        <div class="blog-post-placeholder js-blog-post-template">
+          <article class="blog-post js-blog-post">
+            <div class="blog-post__header">
+              <div class="container">
+                <h1 class="blog-post__header__title js-blog-post-title">
+                  <!-- title here -->
+                  <span class="icon fa fa-close"></span>
+                </h1>
+                <div class="blog-post__header__meta">
+                  <span class="js-blog-post-date">
+                    <!-- date here -->
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="container blog-post__intro js-blog-post-intro">
+              <p class="js-blog-post-description">
+                <!-- description here -->
+              </p>
+              <span class="blog-post__more">Read more...</span>
+            </div>
+            <i class="blog-post__spinner-icon js-spinner fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+            <div class="container blog-post__content js-blog-post-content">
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </div><!-- ./blog -->
+
+    <!-- about us -->
+    <div class="container page page--about js-about">
+      <h1>Hi!</h1>
+      <h2>We're Highlight. We help research communicate their science.</h2>
+      <p>
+        We aim to put <i>your</i> research in the spotlight. We believe it is important that all research results—big or small—are disseminated beyond the laboratory. Whether you are preparing a manuscript for peer review or a press release for the general public, clear communication is essential for successful knowledge transfer.
+      </p>
+      <p>
+        When communicating science to different target audiences, ranging from specialists in your field to funding agencies, policy makers or patients, the language and objectives might be different. However, in all circumstances, you need to demonstrate the importance of your research question and be transparent and correct when reporting your results. Finding the right words can be challenging and time-consuming, even for experienced researchers writing in their native language. We can help you overcome potential hurdles in the preparation of your scientific documents, so your research gets the platform it deserves.
+      </p>
+      <h2>Meet the editor</h2>
+      <div class="page--about__image">
+        <img class="page--about__image__image" srcset="web/img/about-us.jpg 1x, web/img/about-us@2x.jpg 2x" alt="Liesbeth Aerts">
+        <div class="page--about__image__meta">
+          <span class="page--about__image__meta__title">Liesbeth Aerts</span><br>
+          <span class="page--about__image__meta__text">PhD and Scientific editor<br>at Highlight</span>
+        </div>
+      </div>
+      <p>
+        Liesbeth Aerts is an experienced scientific editor who has assisted <span class="nav-link js-nav-link" data-target-index="1">researchers from all continents</span> with the preparation of their publications. She has edited hundreds of papers for different journals including Nature Communications, PLoS Biology, the Royal Society of Chemistry Journal, the Journal of Biological Chemistry, and many others.
+      </p>
+      <p>
+        Liesbeth holds a PhD in Biomedical Sciences and a Post-Graduate diploma in Science Communication. While her own research is focused on neurodegeneration, she has a very broad interest and background in life sciences. Her complementary technical (MSc in Bioscience Engineering) and clinical (MSc in Clinical Neuroscience) background has enabled her to successfully work with researchers in a wide range of fields, including immunology, cancer biology, proteomics, genetics, food technology and biomass production.
+      </p>
+      <p>
+        She has also been involved in numerous outreach activities, delivering presentations or writing about science for kids, for patients or for society at large.
+      </p>
+    </div><!-- ./about us -->
+
+    <!-- contact -->
+    <div class="container page js-contact">
+      <h1>Get in touch!</h1>
+      <p>We'd love to hear from you. Follow us on <a href="https://twitter.com/highlight_sw" target="_blank">Twitter</a>, <a href="https://www.facebook.com/highlightsciencewriting" target="_blank">Facebook</a> or <a href="http://www.linkedin.com/company/10385074" target="_blank">LinkedIn</a>, or leave us a message.
+      </p>
+      <form class="contact-form">
+        <div class="contact-form__thank-you">
+          <h1 class="contact-form__thank-you__title">Thanks.</h1>
+          <p class="contact-form__thank-you__text">
+            Your message has been successfully sent.
+          </p>
+        </div>
+        <input class="contact-form__input-honeypot" id="input-honeypot" type="email" name="email" />
+        <div class="inputs-wrapper col-2">
+          <div class="input-wrapper">
+            <span class="input">
+              <input class="input__field" type="text" id="input-name" name="name" />
+              <label class="input__label" for="input-name">
+                <span class="input__label-content">Your name</span>
+              </label>
+            </span>
+            <div class="error-messages">
+              <span class="input__error">Name required</span>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <span class="input">
+              <input class="input__field" type="email" id="input-email" name="emailAddress" />
+              <label class="input__label" for="input-email">
+                <span class="input__label-content">Your email</span>
+              </label>
+            </span>
+            <div class="error-messages">
+              <span class="input__error">Email required</span>
+              <span class="input__error">Invalid email</span>
+            </div>
+          </div>
+        </div>
+        <div class="inputs-wrapper col-2">
+          <div class="input-wrapper">
+            <span class="input input--textarea">
+              <textarea class="input__field" type="text" id="input-message" rows="4" name="message"></textarea>
+              <label class="input__label" for="input-message">
+                <span class="input__label-content">Your message</span>
+              </label>
+            </span>
+            <div class="error-messages">
+              <span class="input__error">Message required</span>
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <span class="input input--button">
+              <button class="button js-submit-contact-form" type="button">Send message<span class="icon fa fa-paper-plane"></span></button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <p>Or contact us directly via <a href="mailto:info@highlight-science-writing.com" target="_top">info@highlight-science-writing.com</a></p>
+    </div><!-- ./contact -->
+  </div><!-- ./page-wrapper -->
+  <div class="footer">
     <div class="container">
       <div class="footer__social">
         <a class="icon icon--facebook fa fa-facebook-official" href="https://www.facebook.com/highlightsciencewriting" target="_blank"></a>
@@ -405,7 +461,7 @@
         <a class="icon icon--linkedin fa fa-linkedin" href="http://www.linkedin.com/company/10385074" target="_blank"></a>
       </div>
     </div>
-  </div> -->
+  </div>
   <script>
     document.createElement("picture");
   </script>
