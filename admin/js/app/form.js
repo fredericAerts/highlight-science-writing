@@ -5,6 +5,7 @@ hsrBlog.form = (function(window, undefined) {
     var init, populateBlogPostsTable;
 
     var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/admin/';
+    // let urlPrefix = 'http://localhost:8888/admin/';
 
     init = function() {
 
@@ -18,7 +19,8 @@ hsrBlog.form = (function(window, undefined) {
             }
 
             $.post("backend/process-form.php", formData, function(data, status) {
-                // console.log(data);
+                $('.js-modal-blog-posts-confirm .modal-body').html('<p>' + data + '</p>')
+                $('.js-modal-blog-posts-confirm').modal({});
             });
         });
 

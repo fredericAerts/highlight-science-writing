@@ -9,6 +9,7 @@ hsrBlog.tinymce = (function(window, undefined) {
         tinymce.init({
             selector: 'textarea.editor',
             height: 500,
+            convert_urls: false,
             plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',

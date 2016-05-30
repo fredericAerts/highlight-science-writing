@@ -5,6 +5,7 @@ hsr.contactForm = ((window, undefined) => {
     let init, addEventListeners;
 
     let urlPrefix = 'http://66.147.244.112/~highlii7/';
+    // let urlPrefix = 'http://localhost:8888/';
 
     let contactForm = document.querySelector('.contact-form'),
     inputFieldElements = [].slice.call(document.querySelectorAll('.contact-form .input__field')),
