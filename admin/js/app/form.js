@@ -4,8 +4,8 @@ hsrBlog.form = (function(window, undefined) {
 
     var init, populateBlogPostsTable;
 
-    // var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/admin/';
-    let urlPrefix = 'http://localhost:8888/admin/';
+    // var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/blog/';
+    let urlPrefix = 'http://localhost:8888/blog/';
 
     init = function() {
 
@@ -18,7 +18,7 @@ hsrBlog.form = (function(window, undefined) {
                 bodyHtml: tinyMCE.activeEditor.getContent()
             }
 
-            $.post("backend/process-form.php", formData, function(data, status) {
+            $.post(urlPrefix + "backend/process-form.php", formData, function(data, status) {
                 $('.js-modal-blog-posts-confirm .modal-body').html('<p>' + data + '</p>')
                 $('.js-modal-blog-posts-confirm').modal({});
             });

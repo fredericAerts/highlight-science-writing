@@ -18,7 +18,7 @@ hsr.blog = ((window, undefined) => {
         let blogPostsContainer = document.querySelector('.js-blogposts-container');
         let blogPostTemplate = document.querySelector('.js-blog-post-template');
 
-        getAjax(urlPrefix + 'admin/backend/handler.php?property=meta', function(data) {
+        getAjax(urlPrefix + 'blog/backend/handler.php?property=meta', function(data) {
             let metaData = JSON.parse(data);
             let metaDataArray = [];
             // convert data to Array of objects
@@ -121,7 +121,7 @@ hsr.blog = ((window, undefined) => {
                     }, 50);
                 }, 250);
                 // get content
-                getAjax(urlPrefix + 'admin/backend/handler.php?property=body&folder=' + metaData.folder, function(data) {
+                getAjax(urlPrefix + 'blog/backend/handler.php?property=body&folder=' + metaData.folder, function(data) {
                     let bodyHtml = data;
                     blogPostSpinnerElement.classList.remove('active');
                     setTimeout(function() { // wait for spinner fade out
