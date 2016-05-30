@@ -4,8 +4,8 @@ hsrBlog.form = (function(window, undefined) {
 
     var init, populateBlogPostsTable;
 
-    var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/admin/';
-    // let urlPrefix = 'http://localhost:8888/admin/';
+    // var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/admin/';
+    let urlPrefix = 'http://localhost:8888/admin/';
 
     init = function() {
 
