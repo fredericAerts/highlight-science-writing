@@ -4,8 +4,10 @@ hsrBlog.form = (function(window, undefined) {
 
     var init, populateBlogPostsTable;
 
-    // var urlPrefix = 'http://66.147.244.54/~stupidw2/projects/highlight/blog/';
-    let urlPrefix = 'http://localhost:8888/blog/';
+
+    // let urlPrefix = 'http://localhost:8888/blog/';
+    // var urlPrefix = 'http://66.147.244.54/~stupidw2/blog/';
+    let urlPrefix = 'http://www.highlight-science-writing.com/blog/';
 
     init = function() {
 
