@@ -8,7 +8,8 @@ hsr.blog = ((window, undefined) => {
 
     // let urlPrefix = 'http://localhost:8888/';
     // var urlPrefix = 'http://66.147.244.54/~stupidw2/';
-    let urlPrefix = 'http://www.highlight-science-writing.com/';
+    // let urlPrefix = 'http://www.highlight-science-writing.com/';
+    let urlPrefix = 'http://www.fredericaerts.com/external/projects/highlight-science-writing/';
 
 
     init = () => {

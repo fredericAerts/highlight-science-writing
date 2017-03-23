@@ -6,7 +6,8 @@ hsr.contactForm = ((window, undefined) => {
 
     // let urlPrefix = 'http://localhost:8888/';
     // var urlPrefix = 'http://66.147.244.54/~stupidw2/';
-    let urlPrefix = 'http://www.highlight-science-writing.com/';
+    // let urlPrefix = 'http://www.highlight-science-writing.com/';
+    let urlPrefix = 'http://www.fredericaerts.com/external/projects/highlight-science-writing/';
 
     let contactForm = document.querySelector('.contact-form'),
     inputFieldElements = [].slice.call(document.querySelectorAll('.contact-form .input__field')),
@@ -30,7 +31,9 @@ hsr.contactForm = ((window, undefined) => {
             inputField.addEventListener('blur', onInputBlur);
         });
 
-        submitButton.addEventListener('click', onFormSubmit);
+        if (submitButton) {
+            submitButton.addEventListener('click', onFormSubmit);
+        }
 
         // HANDLERS
         function onInputFocus(event) {
