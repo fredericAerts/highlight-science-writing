@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "restricted area"
-AuthUserFile /home3/highlii7/public_html/admin/.htpasswd
-require valid-user

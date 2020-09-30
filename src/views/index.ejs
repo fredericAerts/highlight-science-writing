@@ -1,0 +1,24 @@
+<% var head = require('@meta/head.ejs'); %>
+<% var pageHeader = require('@components/page-header/page-header.ejs'); %>
+<% var foot = require('@meta/foot.ejs'); %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= head({
+      title: 'Highlight Science Writing',
+      description: 'We provide communication services for academics.',
+      canonicalUrl: 'https://www.highlight-science-writing.com/',
+    }) %>    
+  </head>
+  <body>
+    <%= pageHeader({
+      link: {
+        text: 'Highlight Science Writing',
+        link: 'https://www.highlight-science-writing.com/'
+      }
+    }) %>
+    Hello
+    <%= foot() %>
+  </body>
+</html>

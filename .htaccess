@@ -1,3 +1,0 @@
-RewriteEngine On
-        RewriteCond %{HTTP_HOST} ^highlight-science-writing.com$ [NC]
-        RewriteRule ^(.*)$ http://www.highlight-science-writing.com/$1 [L,R=301]
