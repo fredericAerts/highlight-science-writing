@@ -1,5 +1,7 @@
 <% var head = require('@meta/head.ejs'); %>
 <% var pageHeader = require('@components/page-header/page-header.ejs'); %>
+<% var pageHero = require('@components/page-hero/page-hero.ejs'); %>
+<% var pageSection = require('@components/page-section/page-section.ejs'); %>
 <% var foot = require('@meta/foot.ejs'); %>
 
 <!DOCTYPE html>
@@ -9,16 +11,26 @@
       title: 'Highlight Science Writing',
       description: 'We provide communication services for academics.',
       canonicalUrl: 'https://www.highlight-science-writing.com/',
-    }) %>    
+    }) %>
   </head>
   <body>
-    <%= pageHeader({
-      link: {
-        text: 'Highlight Science Writing',
-        link: 'https://www.highlight-science-writing.com/'
-      }
+    <!-- <%= pageHeader() %> -->
+    <%= pageHero() %>
+    <%= pageSection({
+      title: 'Remarkable research',
+      subtitle: 'Public relations for scientists, both online and offline',
+      bgImage: '/img/banners/woman-at-work-in-laboratory.png',
     }) %>
-    Hello
+    <%= pageSection({
+      title: 'Effective outreach',
+      subtitle: 'Press texts, patient or public engagement, stakeholder strategy',
+      bgImage: '/img/banners/models-of-brains.png',
+    }) %>
+    <%= pageSection({
+      title: 'Clear science',
+      subtitle: 'Crossing the t’s and dotting the i’s on manuscripts and grant applications',
+      bgImage: '/img/banners/lab-equipment.png',
+    }) %>
     <%= foot() %>
   </body>
 </html>
