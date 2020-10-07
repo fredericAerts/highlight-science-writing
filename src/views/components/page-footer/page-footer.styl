@@ -1,0 +1,79 @@
+.page-footer
+  background: $grey-xdark
+
+  color: $white
+
+.page-footer__content
+  flex-wrap: wrap
+
+  display: flex
+  width: 100%
+  max-width: $screen-lg-min
+  margin: 0 auto
+  padding: 0 ($gutter-width / 2)
+
+.page-footer__content__col
+  width: 30%
+  padding: ($gutter-width * 2) 0
+
+  &:first-child
+    width: 40%
+
+.page-footer__content__col__contact,
+.page-footer__content__col__social-media
+  position: relative
+  top: $spacing * 2
+
+  padding-top: $spacing * 4
+
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+
+    width: 24px
+    height: 3px
+    background: $white
+
+    content: ""
+  
+  > a
+    color: $white
+
+    transition: color .3s ease
+
+    &:hover
+      color: $accent-color
+
+.page-footer__content__col__slogan
+
+  > span
+    display: block
+    width: 100%
+
+    font-size: 28px
+    line-height: 32px
+    font-weight: $font-weight-bold
+
+.page-footer__content__col__social-media
+
+  > a
+    display: inline-block
+
+    &:before
+      float: left
+
+      display: block
+      width: 20px
+      height: 20px
+      margin-right: $spacing
+      background: url('/img/icons/twitter-white.svg') no-repeat center
+      background-size: contain
+
+      content: ""
+
+.page-footer__content__footer
+  width: 100%
+  
+  font-size: 14px
+  line-height: 34px

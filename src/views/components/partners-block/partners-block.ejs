@@ -1,0 +1,14 @@
+<div class="partners-block">
+  <div class="partners-block__content">
+    <h2 class="partners-block__title">Clients</h2>
+    <ul class="partners-block__list">
+      <% partners.forEach(partner => { %>
+        <li>
+          <a href="<%= partner.link %>" target="_blank">
+            <img class="<%= partner.inflate ? 'inflate' : '' %>" src="<%= partner.logo %>" alt="<%= partner.name %>">
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

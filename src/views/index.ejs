@@ -2,6 +2,8 @@
 <% var pageHeader = require('@components/page-header/page-header.ejs'); %>
 <% var pageHero = require('@components/page-hero/page-hero.ejs'); %>
 <% var pageSection = require('@components/page-section/page-section.ejs'); %>
+<% var partnersBlock = require('@components/partners-block/partners-block.ejs'); %>
+<% var pageFooter = require('@components/page-footer/page-footer.ejs'); %>
 <% var foot = require('@meta/foot.ejs'); %>
 
 <!DOCTYPE html>
@@ -31,6 +33,43 @@
       subtitle: 'Crossing the t’s and dotting the i’s on manuscripts and grant applications',
       bgImage: '/img/banners/lab-equipment.png',
     }) %>
+    <%= partnersBlock({
+      partners: [
+        {
+          name: 'VIB',
+          logo: '/img/logo/VIB.svg',
+          link: 'https://vib.be/',
+        },
+        {
+          name: 'NERF',
+          logo: '/img/logo/NERF.svg',
+          link: 'https://www.nerf.be/',
+          inflate: true,
+        },
+        {
+          name: 'Wageningen Universiteit',
+          logo: '/img/logo/wur.png',
+          link: 'https://www.wur.nl/',
+        },
+        {
+          name: 'NREL',
+          logo: '/img/logo/NREL.png',
+          link: 'https://www.nrel.gov/',
+        },
+        {
+          name: 'KU Leuven',
+          logo: '/img/logo/kul.svg',
+          link: 'https://www.kuleuven.be/',
+        },
+        {
+          name: 'UTHealth',
+          logo: '/img/logo/UTH.jpg',
+          link: 'https://www.uth.edu/',
+          inflate: true,
+        },
+      ],
+    }) %>
+    <%= pageFooter() %>
     <%= foot() %>
   </body>
 </html>
