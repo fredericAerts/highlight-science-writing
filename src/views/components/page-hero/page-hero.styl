@@ -5,44 +5,135 @@
   display: flex
   width: 100%
   height: 100vh
-  background: url('/img/banners/cell-spectroscopy.png') no-repeat center
-  background-size: cover
+  background: url('/img/banners/flower.jpg') no-repeat center
+  background-size: contain
+
+  border-bottom: 1px solid $grey-xlight
   
 .page-hero__content
   width: 100%
   max-width: $screen-lg-min
   padding: 0 ($gutter-width / 2)
+  
+.page-hero__content__title,
+.page-hero__content__subtitle
+  position: relative
+  z-index: 0 
 
-  color: $white
-  text-shadow: 1px 1px 2px $black
-  
-  > h1
-    font-size: 84px
-    font-weight: $font-weight-bold
-  
-  > h2
-    font-size: 44px
-  
-  > button
-    height: 34px
-    margin-top: ($gutter-width * 2)
+  display: inline-block
 
-    color: $accent-color
+  @media screen and (min-width: $screen-xs-min)
+    margin-left: ($gutter-width / 2)
+
+  &:before
+    position: absolute
+    left: -($gutter-width / 2)
+    z-index: -1
+
+    width: "calc(100% + %s)" % $gutter-width
+    background: rgba($accent-color, .8)
+
+    content: ""
+
+
+.page-hero__content__title
+  font-size: 34px
+  line-height: 38px
+  
+  font-weight: $font-weight-bold
+
+  @media screen and (min-width: $screen-xxs-min)
+    font-size: 42px
+    line-height: 46px
+  
+  @media screen and (min-width: $screen-sm-min)
+    font-size: 58px
+    line-height: 62px
+  
+  @media screen and (min-width: $screen-md-min)
+    font-size: 68px
+    line-height: 72px
+
+  &:before
+    top: -($spacing)
+
+    height: "calc(100% + %s)" % ($spacing * 2)
+
+.page-hero__content__subtitle
+  margin-top: ($spacing * 4)
+
+  font-family: $font-family-secondary
+  font-size: 22px
+
+  @media screen and (min-width: $screen-xxs-min)
     font-size: 28px
-    line-height: 30px
-    text-shadow: 1px 1px 2px $black
+  
+  @media screen and (min-width: $screen-sm-min)
+    font-size: 34px
+  
+  @media screen and (min-width: $screen-md-min)
+    font-size: 38px
+  
+  &:before
+    top: -($spacing / 2)
 
-    cursor: pointer
+    height: "calc(100% + %s)" % $spacing
+  
+.page-hero__content__cta
+  position: relative
+  z-index: 0
 
-    &:after
-      float: right
+  height: 38px
+  margin-top: ($gutter-width * 2)
+  padding: 0 ($spacing * 2)
 
-      display: inline-block
-      height: 100%
-      width: 48px
-      background: url('/img/icons/long-arrow-right-accent.svg') no-repeat center
-      background-size: contain
+  font-family: $font-family-secondary
+  font-size: 22px
+  font-weight: $font-weight-bold
+  line-height: 34px
+  text-transform: uppercase
 
-      cursor: pointer
+  cursor: pointer
 
-      content: ""
+  @media screen and (min-width: $screen-xxs-min)
+    height: 42px
+    
+    font-size: 26px
+    line-height: 38px
+  
+  @media screen and (min-width: $screen-md-min)
+    height: 48px
+    
+    font-size: 28px
+    line-height: 44px
+
+  &:before,
+  &:after
+    position: absolute
+    left: 0
+    bottom: 0
+    z-index: -1
+
+    height: 100%
+    width: 100%
+
+    content: ""
+
+    @media screen and (min-width: $screen-md-min)
+      transform: translateY(25%) scaleY(.5)
+      transition: transform .3s ease, opacity .3s ease
+
+  &:before
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+    @media screen and (min-width: $screen-md-min)
+      opacity: 0 
+
+  &:after
+    background: $accent-color
+  
+  &:hover:before,
+  &:hover:after
+    @media screen and (min-width: $screen-md-min)
+      opacity: 1
+      transform: translateY(0) scaleY(1)

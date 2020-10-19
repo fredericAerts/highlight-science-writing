@@ -1,15 +1,17 @@
 .partners-block
   max-width: $screen-lg-min
   margin: 0 auto
-  padding: ($gutter-width * 2) 0
+  padding: ($gutter-width * 2) ($gutter-width / 2)
 
 .partners-block__title
   margin-top: 0
   margin-bottom: $gutter-width
 
-  font-size: 44px
+  font-size: 34px
   font-weight: $font-weight-bold
-  text-align: center
+
+  @media screen and (min-width: $screen-xxs-min)
+    font-size: 42px
 
 .partners-block__list
   flex-wrap: wrap
