@@ -1,10 +1,12 @@
-import { exampleModuleInit } from './modules/example/example.module';
+import './index.polyfills'
+
+import { ctaModuleInit } from './modules/cta/cta.module';
 
 import '../css/index.styl';
 import '../views/index.styl';
 
 function init() {
-  exampleModuleInit();
+  ctaModuleInit();
 }
 
 if (document.readyState !== 'loading') {

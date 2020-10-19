@@ -5,10 +5,21 @@
   display: flex
   width: 100%
   height: 100vh
-  background: url('/img/banners/flower.jpg') no-repeat center
+  background-image: url('/img/banners/flower-xxs.jpg')
+  background-repeat: no-repeat
+  background-position: center
   background-size: contain
 
   border-bottom: 1px solid $grey-xlight
+
+  @media screen and (min-width: $screen-sm-min)
+    background-image: url('/img/banners/flower-sm.jpg')
+  
+  @media screen and (min-width: $screen-md-min)
+    background-image: url('/img/banners/flower-lg.jpg')
+  
+  @media screen and (min-width: $screen-lg-min)
+    background-image: url('/img/banners/flower-xlg.jpg')
   
 .page-hero__content
   width: 100%

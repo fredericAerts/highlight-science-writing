@@ -12,7 +12,7 @@
     <%= head({
       title: 'Highlight Science Writing',
       description: 'We provide communication services for academics.',
-      canonicalUrl: 'https://www.highlight-science-writing.com/',
+      canonicalUrl: 'https://www.highlight-science-writing.com',
     }) %>
   </head>
   <body>
@@ -21,17 +21,17 @@
     <%= pageSection({
       title: 'Remarkable research',
       subtitle: 'Public relations for scientists, both online and offline',
-      bgImage: '/img/banners/woman-at-work-in-laboratory.png',
+      classModifier: 'research',
     }) %>
     <%= pageSection({
       title: 'Effective outreach',
       subtitle: 'Press texts, patient or public engagement, stakeholder strategy',
-      bgImage: '/img/banners/models-of-brains.png',
+      classModifier: 'outreach',
     }) %>
     <%= pageSection({
       title: 'Clear science',
       subtitle: 'Crossing the t’s and dotting the i’s on manuscripts and grant applications',
-      bgImage: '/img/banners/lab-equipment.png',
+      classModifier: 'science',
     }) %>
     <%= partnersBlock({
       partners: [
@@ -62,10 +62,9 @@
           link: 'https://www.kuleuven.be/',
         },
         {
-          name: 'UTHealth',
-          logo: '/img/logo/UTH.jpg',
-          link: 'https://www.uth.edu/',
-          inflate: true,
+          name: 'University of Sydney',
+          logo: '/img/logo/university-of-sydney.png',
+          link: 'https://www.sydney.edu.au/',
         },
       ],
     }) %>
