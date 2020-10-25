@@ -9,6 +9,7 @@ const inViewportOptions = {};
     ================================================================ */
 function viewportAnimationsModuleInit() {
   animatedEls.forEach((el) => {
+    el.parentNode.classList.remove('active');
     inViewport(el, inViewportOptions, () => visible(el));
   });
 }
