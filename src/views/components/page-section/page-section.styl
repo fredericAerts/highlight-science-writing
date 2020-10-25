@@ -40,16 +40,29 @@
     height: 100%
     background: rgba($black, .5)
 
+    opacity: 0
+    transition: opacity .3s ease
     content: ""
   
+  &.active:before
+    opacity: 1
+  
 .page-section__content
-  transform: translateY(50%)
+  transform: translateY(100%)
 
   width: 100%
   max-width: $screen-lg-min
   padding: 0 ($gutter-width / 2)
 
   color: $white
+
+  opacity: 0
+  transition: transform .3s ease .2s, opacity .3s ease .2s
+
+  .active &
+    transform: translateY(60%)
+
+    opacity: 1
   
   > h2
     font-size: 34px
